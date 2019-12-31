@@ -4,23 +4,20 @@ cantidad=c(100,300,600,1000,3000)
 # dibujo para ver la forma
 plot(cantidad,precio,type="b",lty=1) # tipo b, dibuja puntos y líneas
 # ¿parece que cuando la "x" aumenta, la "y" baja? 
-# podría tener la forma precio = p0*exp(k/cantidad) o bien, precio =p0* k / cantidad
-# elijo la primera opción.
-plot(cantidad,log(precio)) #aplicando logaritmos
-# y parece que se ajusta a una curva...
-l1 = lm(log(precio)~cantidad)
+# podría tener la forma precio = a / cantidad + b
+# ya que si cantidad -> 0, precio --> ifinito y si cantidad -> inf, precio -> 0
+# como no me funciona, represento la recta precio = a log (1/ cantidad) + b
+plot(log(1/cantidad),precio)
+l1 = lm(precio~log(1/cantidad))
 abline(l1)
-# ¿Qué coeficiente tiene?
-cat("Recta de regresión, coeficiente R^2: ",summary(l1)$r.squared)
-# Averiguar una cantidad
-# p0 se sabe con la ordenada en el origen y k con la pendiente
-# ya que log(precio)=log(p0)+k*cantidad
-k = l1$coefficients[2] # la inversa de la pendiente de esa recta
-ordenada = l1$coefficients[1] # es la ordenada en el origen
-p0 = exp(ordenada)
-# entonces la funcion de los precios sería
-fprecios = function(x){p0*exp(k*x)}
-cat("Cuando se vendan 500 kg se harán a: ",round(fprecios(500),2),"€")
-cat("Cuando se vendan 50 kg se harán a: ",round(fprecios(50),2),"€")
-
-# ver en: https://www.geogebra.org/m/eph2ggyk
+# valores
+a = l1$coefficients[2]
+b = l1$coefficients[1]
+cat ("recta de pendiente a: ",a," y de ordenada b: ",b)
+cat ("De coeficiente de correlación R^2: ",summary(l1)$r.squared)
+# Tenemos pues una función del precio
+fprecio=function(x){round(a*log(1/x)+b,2)}
+# El precio para 500 kg sería
+cat ("El precio para 500kg sería ",fprecio(500),"€ ")
+cat ("El precio para 50kg sería ",fprecio(50),"€ ")
+cat ("El precio para 4000kg sería ",fprecio(4000),"€ ")
