@@ -1,0 +1,7 @@
+En el mercado de abastos, los precios del pescado suelen variar según la cantidad que haya entrado ese día de una determinada especie y de lo que el público que llega a las pescaderías demanda.
+
+    Si por ejemplo, han entrado en la plaza pocas gambas blancas (100kg) los pescaderos empiezan con un precio inicial alto (20€/kilo). Si no se venden (la demanda es baja), los pescaderos pueden plantearse reducir el precio hasta que se venda todo. Digamos que 100 kg de gambas blancas se venden completamente cuando el precio alcanza los 15€.
+    Si entran en la plaza 200kg de gambas blancas, se terminan al final del día vendiendo a 10€.
+    Si entran en la plaza 300 kg de gambas blancas, se terminan al final del día vendiendo a 7,5€
+
+¿Serías capaz de averiguar a cuánto se terminarían vendiendo 500kg de gambas blancas al final del día? ¿Y 50 kg? Usa lo que has aprendido anteriormente. 
