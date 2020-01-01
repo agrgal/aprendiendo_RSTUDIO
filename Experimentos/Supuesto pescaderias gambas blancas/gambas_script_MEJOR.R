@@ -18,9 +18,11 @@ cat("Recta de regresión, coeficiente R^2: ",summary(l1)$r.squared)
 k = 1/l1$coefficients[2] # la inversa de la pendiente de esa recta
 ordenada = l1$coefficients[1] # es la ordenada en el origen
 p0 = exp(-ordenada*k)
+k
+p0
 # entonces la funcion de los precios sería
 fprecios = function(x){p0*exp(k/x)}
 cat("Cuando se vendan 500 kg se harán a: ",round(fprecios(500),2),"€")
 cat("Cuando se vendan 50 kg se harán a: ",round(fprecios(50),2),"€")
 
-# ver en: https://www.geogebra.org/m/eph2ggyk
+# ver en:https://www.geogebra.org/classic/fxgrwxvc
