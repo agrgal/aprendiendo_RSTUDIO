@@ -1,0 +1,98 @@
+---
+title: "Halterofilia"
+author: "Aurelio Gallardo Rodríguez"
+date: "12 de octubre de 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introducción. Condiciones del ejercicio.
+Estudiamos en esta ocasión un fichero de datos que contiene los resultados de pruebas de Halterofilia, en concreto las celebradas en el campeonato del mundo de 2010. 
+
+Después de descargarnos el fichero de la web [**Halterofilia**](https://miriadax.net/documents/28098821/74010125/Halterofilia.csv/f2fb1ddc-6de0-4942-870e-fbe5e9d2eca8), lo guardamos en nuestro directorio de trabajo con el nombre de **Halterofilia.csv**. Este fichero, del *tipo de datos separados por comas*, lo podremos abrir asignándolos al data frame Resultados con la orden... 
+```{r Carga de Resultados, echo=TRUE, message=FALSE, warning=FALSE}
+Resultados = read.csv("Halterofilia.csv", sep=";")
+```
+Suponiendo que el fichero se encuentre en el directorio de trabajo; en caso contrario tendremos que indicar la ruta en la que se encuentra. Puntualizar que los datos están separados por ";", con lo que hay que indicarlo explícitamente usando el atributo *sep*.
+Una vez cargado como un *data frame*, lo primero es echarle un vistazo; la estructura de datos sería...
+```{r Visualizar Resultados, echo=TRUE, warning=FALSE}
+str(Resultados)
+```
+Y veamos algunos datos (tres primeras filas):
+```{r Mostrar algunos datos, echo=FALSE, message=FALSE, warning=FALSE}
+head(Resultados,3)
+```
+Podemos observar como el fichero tiene los datos de 462 atletas, de los cuales se han registrados 6 informaciones: su peso en kg, la categoría en la que compiten, su sexo (M - masculino- y F -femenino-), y tres resultados: el peso levantado en *arrancada*, en *dos tiempos* y en *total*, todos en kilogramos. 
+De ellos, el campo "**Categoria**" es un vector factorizado con 14 niveles y **Sexo** otro factor con 2 niveles. Si analizamos los factores del vector "Categoria", encontramos que no está ordenado.
+```{r Niveles de Categoria, echo=TRUE, message=FALSE, warning=FALSE}
+levels(Resultados$Categoria)
+```
+
+## Apartado A) Ordenando el vector "Categoria"
+
+Para ordenar el vector factorizado "Categoria", debo, simplemente usar la instrucción **ordered** y asignarle los niveles con el atributo **levels** adecuado. Lo primero que podemos pensar es copiar "a mano" el orden que se nos pide en el ejercicio ("menos 48","menos 53","menos 56","menos 58","menos 62","menos 63","menos 69","menos 75","mas 75","menos 77","menos 85","menos 94","menos 105","mas 105"), asignarlo a un vector, y aplicarlo con la instrucción *ordered* al factor "Categoria". 
+Sin embargo he optado por una solución algo más larga, pero que automatiza el proceso y en la que no hay que escribir "a mano" los factores ya ordenados. Extraeré dichos factores, los ordenaré y los aplicaré una vez ordenados.
+
+#### A1) Recupero los niveles de "Categoria"
+
+```{r Obtener niveles de CATEGORIA, echo=TRUE, message=FALSE, warning=FALSE}
+Categoria = Resultados$Categoria  # obtengo la columna de las Categorías
+levelsCategoria=levels(Categoria) # obtengo los distintos niveles
+levelsCategoria
+```
+Observamos como los niveles extraídos están ordenados alfabéticamente. "ma.." viene antes que "me.." y "menos 105" antes que "menos 48". Debo conseguir un ordenamiento en que la primera condición sea el número y la segunda la palabra "menos-más"; así quedará ordenado tal como se pide en el ejercicio.
+
+#### A2) Separando el contenido de cada factor
+```{r Convertir lista en MATRIZ, echo=TRUE}
+levelsCategoriaLista=strsplit(levelsCategoria," ")
+levelsCategoriaMatriz=matrix(unlist(levelsCategoriaLista),nrow=14,byrow=TRUE)
+levelsCategoriaMatriz
+```
+Lo primero es crear una lista con los niveles mediante la función **strsplit**, y, con la segunda orden consigo transformar la lista a una matriz de 14 filas, rompiendo la lista con la instrucción **unlist**. La función *strsplit* separa una cadena según una caracter separador (en este caso el espacio). Como se la estoy aplicando a un vector, construye una lista en la que cada elemento del vector original se transforma, a su vez, en un elemento de la lista formado por un vector de orden dos: la palabra "mas" o "menos" y el peso.
+```{r Convertir en DATA FRAME, echo=TRUE}
+levelsCategoriaData = data.frame(levelsCategoriaMatriz)
+names(levelsCategoriaData)=c("masmenos","peso")
+```
+Con las siguientes dos instrucciones convierto la matriz en un data frame. Esto permitirá poder manejar las dos partes de cada factor (la palabra "más-menos" y el dato numérico) por separado, cada una con su tipo, tipo caracteres y tipo numérico; en una matriz todos los elementos deben ser del mismo tipo, y, si lo dejo como matriz, no podré tratar los números como tales, sino como caracteres. También renombro, por comodidad, las dos informaciones que he obtenido: **masmenos** y **peso**.
+
+#### A3) ¡Los "pesos" son números!
+Hasta ahora, los pesos se han guardado como caracteres. Es hora de convertirlos a números. 
+```{r}
+levelsCategoriaData$peso=as.numeric(as.character(levelsCategoriaData$peso))
+levelsCategoriaData$peso
+```
+En la instrucción se observa como se obtiene el resultado con **as.numeric**; sin embargo, no funciona bien si no forzáis antes al factor "peso"" del data frame a ser caracteres (aunque de partida lo fuese). Podéis leer este "truco" en [esta dirección](http://stackoverflow.com/questions/27528907/how-to-convert-data-frame-column-from-factor-to-numeric)
+
+#### A4) Ordenando el data frame levelsCategoriaData
+Para poder ordenar el data frame que he obtenido, necesito cargar una librería llamada **"dplyr"** con la siguiente orden:
+```{r Cargar librería DPLYR, echo=TRUE, message=FALSE, warning=FALSE}
+library("dplyr", lib.loc="~/R/i686-pc-linux-gnu-library/3.2")
+```
+Es posible que el lector la tenga que instalar y que, además, se instale en otra ruta del sistema. En todo caso R Studio permite localizarla fácilmente. Así podré usar la instrucción **arrange** que me permitirá ordenar el data frame según los criterios que necesito.
+```{r}
+levelsCategoriaData=arrange(levelsCategoriaData,peso,desc(masmenos))
+levelsCategoriaData
+```
+En concreto a **arrange** sólo necesito pasarle como parámetros, además del *data frame*, el nombre del primer vector por el que quiero que ordene, en este caso *peso*, y, en orden descendente *masmenos*; descendente porque así, alfabéticamente, "menos" precede a "mas. Tan sólo queda convertir esta información, de nuevo, en vector para aplicárselo a "Categoria".
+
+#### A5) Redefino el vector levelsCategoria
+Redefino el vector anterior, levelsCategoria, que creé en un paso anterior; eso sí, con al información del data frame ya ordenado. Uso la instrucción **paste** que une varias informaciones separándolas por un caracter indicado en *sep*, en este caso un espacio vacío.
+```{r}
+levelsCategoria = paste(levelsCategoriaData$masmenos,levelsCategoriaData$peso,sep=" ")
+levelsCategoria
+```
+
+#### A6) Y aplico el vector obtenido a "Categoria", obteniendo un factor ordenado
+
+Una vez obtenido, de forma ordenada, un vector con los niveles que he de aplicar a "Categoria", sólo debo aplicarlo con la instrucción *ordered* y presento los resultados para comprobarlo. 
+
+```{r}
+Resultados$Categoria = ordered(Resultados$Categoria,levels=levelsCategoria)
+# presenta resultados
+levels(Resultados$Categoria)
+str(Resultados)
+```
+Obsérvese como el resultado de str(Resultados) arroja, para la columna "Categoria" que es un factor ordenado (**Ord.factor w/ 14 levels**), y el orden es el que se pedía en el ejercicio (**"menos 48"<"menos 53"<**).

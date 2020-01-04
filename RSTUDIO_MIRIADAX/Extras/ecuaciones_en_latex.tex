@@ -1,0 +1,1531 @@
+\documentclass[a4paper,12pt]{article}
+
+\setlength{\textwidth}{425pt}
+
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+
+\usepackage{graphics} % Glider
+
+% Ejemplos del cap?tulo "Nuevos comandos"
+\newcommand{\fdelta}{\delta_n (x)}
+\newcommand{\limite}{\mathop{\mbox{L?mite}}}
+\newcommand{\prodint}[2]{\left\langle #1, #2 \right\rangle}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\title{Ecuaciones en \LaTeX}
+\author{Sebasti?n Santisi}
+
+\begin{center}
+ \vspace*{2.3cm}
+
+ \line(1,0){370}
+
+ \vspace{14pt}
+
+ {\Huge \textsc{Ecuaciones en \LaTeX}} \\
+ \vspace{0.5cm}
+ {\Large Sebasti?n Santisi} \\
+ \vspace{0.5cm}
+ \emph{Primera Edici?n} \\
+
+ \vspace{0.7cm}
+
+ %%logo
+ \begin{picture}(45,45)(0,0)
+ \multiput(0,0)(0,15){4}{\line(1,0){45}}
+ \multiput(0,0)(15,0){4}{\line(0,1){45}}
+ \put(7.5,7.5){\circle*{12}}
+ \put(22.5,7.5){\circle*{12}}
+ \put(37.5,7.5){\circle*{12}}
+ \put(37.5,22.5){\circle*{12}}
+ \put(22.5,37.5){\circle*{12}}
+ \end{picture}
+
+ \line(1,0){370}
+
+\end{center}
+                                                                               
+\vfill
+
+ \begin{quote}
+
+ {\footnotesize \copyright\ Sebasti?n Santisi, 2006}
+
+ \vspace{0.2cm}
+
+ \begin{itshape}
+  {\footnotesize Para obtener la ?ltima versi?n de este documento o contactarse con el autor, dirigirse a \texttt{http://web.fi.uba.ar/\char126 ssantisi/works/ecuaciones\_en\_latex/}. }
+ \end{itshape}
+
+  \vspace{0.5cm}
+
+  {\scriptsize Esta obra est? licenciada bajo una Licencia Atribuci?n-NoComercial-CompartirDerivadasIgual 2.5 Argentina de Creative Commons. Para ver una copia de esta licencia, visite
+
+   \vspace{-15pt}
+
+   \begin{center}
+    \texttt{http://creativecommons.org/licenses/by-nc-sa/2.5/ar/}
+   \end{center}
+
+  \vspace{-20pt}
+
+  o env?enos una carta a Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.}
+\end{quote}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introducci?n}
+
+\subsection{Objetivos}
+
+El objetivo de este trabajo es el de guiar al lector en la curva de aprendizaje que implica el manejar ecuaciones matem?ticas embebidas en c?digo \LaTeX~\cite{ltx}.
+
+El presente trabajo no es un tratado acerca de \LaTeX, el eje del mismo son las ecuaciones y se asume que el lector ya tiene una noci?n de c?mo funciona este importante lenguaje.
+
+Este trabajo se centra en los comandos que acepta \LaTeX\ nativamente; existen extensiones interesantes como las que agrega la AMS~\cite{ams}, pero no ser?n foco de esta edici?n.
+
+\subsection{Aplicaciones}
+
+Hoy en d?a es imposible pensar en cualquier tipo de publicaci?n o informe cient?ficos que no necesiten incluir ecuaciones entre sus l?neas; ecuaciones sencillas como
+\[ \displaystyle f^{(n)} (z_0) = \frac{n !}{2 \pi i} \oint_{\mathcal{C}} \frac{f(z)}{(z - z_0)^{n+1}}\, dz \]
+son imposibles de escribir en procesadores de texto de oficina y, en el caso de poderse, las mismas no tienen un lenguaje declarativo de fondo que les permita una subsistencia m?s all? del documento en cuesti?n.
+
+\subsection{?Por qu? \LaTeX?}
+
+\LaTeX\ est? basado \TeX~\cite{tex}~\cite{tug}, lenguaje que fuera creado por Donald E. Knuth~\cite{dek} a finales de los a?os setenta como base para escribir sus vol?menes de \emph{The Art Of Computer Programming}.
+
+\TeX\ provoc? una revoluci?n debido a su filosof?a de portabilidad y persistencia, poniendo al alcance de todos una herramienta poderosa y libre para hacer el trabajo del tipista. Junto con
+\texttt{METAFONT}, % S?, s? que esa no es la fuente del logo de METAFONT; no tengo mflogo.
+un lenguaje descriptor de fuentes, y con la familia de fuentes Computer Modern, el paquete de \TeX\ brind? la posibilidad de escribir libros de calidad profesional que pudieran verse id?nticos en cualquier plataforma y un entorno robusto para escribir art?culos cient?ficos con soporte para ecuaciones matem?ticas.
+
+\LaTeX\ es un lenguaje creado por Leslie Lamport~\cite{ll} a mediados de los a?os ochenta y no es m?s que un juego de macros para \TeX\ en las cuales se a?aden plantillas de estilos y se da estructura al lenguaje, permitiendo el f?cil manejo de cap?tulos, referencias, tablas de contenidos, y m?s. El mismo ha sido aceptado de muy buen grado por la comunidad acad?mica y hoy en d?a es un standard para la confecci?n de papers, publicaciones, ediciones de libros, etc?tera.
+
+\newpage
+
+\section{Comenzando con ecuaciones en \LaTeX}
+
+\subsection{El m?nimo documento}
+
+Este trabajo se centra especificamente en el modo matem?tico de \LaTeX, sin embargo daremos una noci?n de cu?l es el m?nimo documento que necesitamos para montar las f?rmulas presentadas en este trabajo y poder compilarlas.
+
+Nuestro documento podr?a ser como este
+\begin{quote}
+\begin{verbatim}
+\documentclass[a4paper,12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\begin{document}
+
+% Aqu? ir?an nuestros textos...
+
+\end{document}
+\end{verbatim}
+\end{quote}
+
+La declaraci?n \verb/\documentclass/ define el tipo de trabajo, de hoja y el tama?o de fuente; ambos comandos \verb/\usepackage/ le indican a \LaTeX\ que escribiremos en castellano y con codificaci?n Latin1, esto ser? ?til a la hora de querer escribir acentos, cortar palabras	 o de presentar los n?meros en nuestro formato local. Todo nuestro trabajo se escribir? entre las marcas de \verb/\begin{document}/ y \verb/\end{document}/.
+
+Para m?s referencias sobre c?mo escribir documentos en \LaTeX\ o sobre c?mo compilar consultar alguna de las fuentes sugeridas al final de este trabajo (\cite{drw}~\cite{lwb}).
+
+\subsection{Modo matem?tico}
+
+En \LaTeX, las ecuaciones no forman parte del texto de p?rrafo sino que son manejadas como entidades diferenciadas, con diferentes fuentes, reglas y sintaxis; existen varias maneras de entrar al modo matem?tico en \LaTeX, presentaremos la mayor parte en este cap?tulo y dejaremos una para m?s adelante.
+
+Para embeber ecuaciones en el texto de p?rrafo, la opci?n m?s sencilla es encerrar las mismas entre dos s?mbolos \verb/$/. Por ejemplo, para obtener la siguiente salida
+\begin{quotation}
+Decimos que $f$ es una funci?n lineal si est? definida
+como $f(x) = ax + b$ siendo $a$ y $b$ dos n?meros reales.
+\end{quotation}
+utilizamos la siguiente sintaxis 
+\begin{quote}
+\begin{verbatim}
+Decimos que $f$ es una funci?n lineal si est? definida
+como $f(x) = ax + b$ siendo $a$ y $b$ dos n?meros reales.
+\end{verbatim}
+\end{quote}
+
+Esta es la forma abreviada de encerrar a nuestra ecuaci?n entre \verb/\begin{math}/ y \verb/\end{math}/. \LaTeX, adem?s, provee la facilidad de encerrar las ecuaciones entre \verb/\(/ y \verb/\)/; pero dado que esto s?lo funciona en \LaTeX\ y no en otros derivados de \TeX, no haremos hincapi? en eso.
+
+Para insertar una ecuaci?n independiente del texto de p?rrafo, se la debe encerrar entre delimitadores \verb/\begin{equation}/ y \verb/\end{equation}/; por ejemplo, para obtener
+\begin{quotation}
+En tiempo continuo una se?al es par si
+\begin{equation}
+x(-t) = x(t),
+\end{equation}
+mientras que una se?al en tiempo discreto es par si
+\begin{equation}
+x[-n] = x[n].
+\end{equation}
+\end{quotation}
+debemos escribir
+\begin{quote}
+\begin{verbatim}
+En tiempo continuo una se?al es par si
+\begin{equation}
+x(-t) = x(t),
+\end{equation}
+mientras que una se?al en tiempo discreto es par si
+\begin{equation}
+x[-n] = x[n].
+\end{equation}
+\end{verbatim}
+\end{quote}
+
+Puede verse c?mo \LaTeX\ automaticamente numera nuestras ecuaciones.
+
+Para insertar ecuaciones independientes del texto de p?rrafo y sin numeraci?n debemos encerrarlas entre \verb/\[/ y \verb/\]/. Por ejemplo, para obtener
+\begin{quotation}
+Es decir, la relaci?n entrada-salida para el sistema de identidad continuo es
+\[ y(t) = x(t), \]
+y la relaci?n discreta correspondiente es
+\[ y[n] = x[n]. \]
+\end{quotation}
+escribimos
+\begin{quote}
+\begin{verbatim}
+Es decir, la relaci?n entrada-salida para el sistema de
+identidad continuo es
+\[ y(t) = x(t), \]
+y la relaci?n discreta correspondiente es
+\[ y[n] = x[n]. \]
+\end{verbatim}
+\end{quote} 
+
+En este trabajo usaremos \verb/\[/ y \verb/\]/ por practicidad, pero en realidad estos son una forma abreviada para \verb/\begin{displaymath}/ y \verb/\end{displaymath}/ respectivamente. Adem?s puede encerrarse a la ecuaci?n entre s?mbolos \verb/$$/.
+
+\subsection{Caracteres reservados}
+
+En el modo matem?tico, todos los caracteres tienen su sentido habitual con excepci?n de \verb/#/, \verb/$/, \verb/%/, \verb/&/, \verb/~/, \verb/_/, \verb/^/, \verb/\/, \verb/{/, \verb/}/ y \verb/'/; los cuales tienen significados propios que veremos m?s adelante.
+
+Para obtener \verb/# $ % & _ { }/ en modo matem?tico debemos escapearlos con barra invertida; \emph{i.e.} \verb/\# \$ \% \& \_ \{ \}/ mostrar?a los caracteres correspondientes. Ahora bien, para obtener la barra invertida \verb/\/ debemos escribir \verb/\backslash/. El modo de representar a \verb/~/, \verb/^/ y \verb/'/ lo veremos m?s adelante.
+
+El car?cter de espacio carece de significado en el modo matem?tico, por ejemplo, escribir
+\begin{quote}
+\begin{verbatim}
+\[ f ( x , y ) = 4 y + 5 x - 2 \]
+\end{verbatim}
+\end{quote}
+y
+\begin{quote}
+\begin{verbatim}
+\[ f(x,y)=4y+5x-2 \]
+\end{verbatim}
+\end{quote}
+es equivalente, como puede verse al compilar
+\[ f ( x , y ) = 4 y + 5 x - 2 \]
+\[ f(x,y)=4y+5x-2 \]
+
+Es importante aclarar que en \LaTeX\ el delimitador de punto decimal es el punto (\verb/./), sin excepci?n. El mismo se renderizar? diferente seg?n los locales del documento que compilemos; compilando con locales castellanos la entrada
+\begin{quote}
+\begin{verbatim}
+\[ 3.1416 \]
+\end{verbatim}
+\end{quote}
+se ver?
+\[ 3.1416 \]
+es decir, se intercambiar? el punto que escribimos por una coma; si utiliz?ramos coma como separador decimal ver?amos
+\[ 3,1416 \]
+la cual es una expresi?n erronea dado que se est? agregando un espacio no deseado entre el separador decimal y los decimales.
+
+\subsection{Estilos}
+
+Las ecuaciones en en modo matem?tico responden a cuatro estilos diferentes los cuales pueden ser de utilidad seg?n el contexto; los mismos son \verb/\displaystyle/, \verb/\textstyle/, \verb/\scriptstyle/ y \verb/\scriptscriptstyle/.
+El estilo \verb/\displaystyle/ es el que se aplica por omisi?n sobre las ecuaciones independientes del texto de p?rrafo; se caracteriza por la elegancia y porque las f?rmulas se expanden tanto como sea necesario. Por su parte \verb/\textstyle/ se aplica a ecuaciones embebidas y otros contextos que veremos m?s adelante; si bien la tipograf?a es similar en tama?o al estilo precedente, se caracteriza porque sus ecuaciones no ocupan en altura m?s que la l?nea de p?rrafo en la que se encuentran. Los otros dos estilos generan ecuaciones de menor tama?o.
+
+Si escribimos
+\begin{quote}
+\begin{verbatim}
+\[ \displaystyle f(x) = 5x + 2 \]
+\[ \textstyle f(x) = 5x + 2 \]
+\[ \scriptstyle f(x) = 5x + 2 \]
+\[ \scriptscriptstyle f(x) = 5x + 2 \]
+\end{verbatim}
+\end{quote}
+veremos
+\[ \displaystyle f(x) = 5x + 2 \]
+\[ \textstyle f(x) = 5x + 2 \]
+\[ \scriptstyle f(x) = 5x + 2 \]
+\[ \scriptscriptstyle f(x) = 5x + 2 \]
+
+Retomaremos la diferencia entre \verb/\displaystyle/ y \verb/\textstyle/ m?s adelante.
+
+\newpage
+
+\section{Texto}
+
+\subsection{Espacios}
+
+Como dijimos anteriormente, los espacios carecen de sentido en el modo matem?tico; \LaTeX\ provee diferentes espaciados que pueden aplicarse sobre cualquier entidad, a saber
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE ESPACIOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+\LaTeX &		Render \\
+\hline\hline
+\verb/a \qquad b/ &	$a \qquad b$ \\
+\verb/a \quad b/ &	$a \quad b$ \\
+\verb/a\ b/ &		$a\ b$ \\
+\verb/a\;b/ &		$a\;b$ \\
+\verb/a\>b/ &		$a\>b$ \\
+\verb/a\,b/ &		$a\,b$ \\
+\verb/ab/ &		$ab$ \\
+\verb/a\!b/ &		$a\!b$ \\
+\hline
+\end{tabular}
+%\caption{Espacios en \LaTeX}
+\end{center}
+%\end{figure}
+
+Resaltaremos dos en particular de la tabla, uno es el espacio `\verb/\ /' que es el espacio com?n de un car?cter; el otro es el espacio \verb/\!/ que es un espacio negativo, es decir, provoca un solapamiento entre dos entidades.
+
+\subsection{Modificadores de caracteres}
+
+La siguiente tabla muestra los modificadores que se le pueden aplicar a los caracteres en modo matem?tico:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE ACENTOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+&			\LaTeX &					Render \\
+\hline\hline
+Sub\'indice &		\verb/a_{b + c}./ &				$a_{b + c}.$ \\
+\hline
+Super\'indice &		\verb/a^{b + c}./ &				$a^{b + c}.$ \\
+\hline
+Super/Sub &		\verb/a_{i,j}^{n + m}./ &			$a_{i,j}^{n + m}.$ \\
+\hline
+Con precedencia &	\verb/a_i{}^j{}_k./ &				$a_i{}^j{}_k.$ \\
+\hline
+Derivadas &		\verb/x', x'', \dot x, \ddot x./  &		$x',\ x'',\ \dot x,\ \ddot x.$ \\
+\hline
+Acentos &		\verb/\hat a, \check a, \tilde a,/ &		$\hat a,\ \check a,\ \tilde a,$ \\
+&			\verb/\acute a, \grave a, \breve a,/ &		$\acute a,\ \grave a,\ \breve a,$ \\
+&			\verb/\bar a, \vec a./ &			$\bar a,\ \vec a.$ \\
+\hline
+Acentos largos &	\verb/\overline{ab}, \underline{ab},/ &		$\overline{ab},\ \underline{ab},$ \\
+&			\verb/\overrightarrow{ab}, \overbrace{ab},/ &	$\overrightarrow{ab},\ \overbrace{ab},$ \\
+&			\verb/\overleftarrow{ab}, \underbrace{ab},/ &	$\overleftarrow{ab},\ \underbrace{ab},$ \\
+&			\verb/\widehat{ab}./ &				$\widehat{ab}.$ \\
+\hline
+\end{tabular}
+%\caption{Modificadores de caracteres}
+\end{center}
+%\end{figure}
+
+Se introducen en la misma conceptos nuevos que veremos a lo largo de todo el tutorial; podemos ver que la manera que tiene \LaTeX\ de agrupar sentencias en el modo matem?tico es encerrando a las mismas entre \verb/{/ y \verb/}/. Podemos ver en la tabla, por ejemplo, que los super?ndices se indican con el s?mbolo \verb/^/; ahora bien, si nosotros escribimos
+\begin{quote}
+\begin{verbatim}
+\[ 2^n+1 \]
+\end{verbatim}
+\end{quote}
+para indicar la en?sima potencia m?s uno de dos obtenemos
+\[ 2^n+1 \]
+lo cual no es lo que esper?bamos; para definir correctamente esta expresi?n tenemos que agrupar el exponente \verb/n+1/ como una ?nica entidad, es decir escribimos
+\begin{quote}
+\begin{verbatim}
+\[ 2^{n + 1} \]
+\end{verbatim}
+\end{quote}
+para entonces ver
+\[ 2^{n + 1} \]
+
+Podemos ver, adem?s, como \verb/{}/ define a un grupo vac?o, es decir, modificadores que se aplican sobre nada; ellos pueden servirnos para forzar precedencias o para aplicar modificadores sin un objeto previo, por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ {}_a^b X_c^d \]
+\end{verbatim}
+\end{quote}
+se renderiza
+\[ {}_a^b X_c^d \]
+
+Algunos s?mbolos son combinables con sub?ndices y super?ndices, por ejemplo \verb/$\underbrace{5 + 6}_{11}$/ se ve $\underbrace{5 + 6}_{11} $.
+
+Para aquellos que sepan \LaTeX, vale aclarar que las reglas de acentuaci?n habituales del lenguaje con los s?mbolos \verb/\'/, \verb/\"/, \verb/\~/, etc?tera no rigen en el modo matem?tico.
+
+\subsection{Texto embebido}
+
+Dado que en el modo matem?tico los caracteres pierden el contexto de texto para ser interpretados como variables, muchas veces necesitamos embeber texto de p?rrafo dentro de ecuaciones, para esto se utiliza la entidad \verb/\mbox{}/.
+Todo lo que est? entre el \verb/{/ y el \verb/}/ de un \verb/\mbox/ es interpretado como texto de p?rrafo, aplic?ndose las mismas reglas que para el mismo, \emph{i.e.}, reglas de espaciado, acentuaci?n, etc?tera. Por ejemplo, si escribimos
+\begin{quote}
+\begin{verbatim}
+\[ f(x) < 5 \mbox{ para todo } x \]
+\end{verbatim}
+\end{quote}
+veremos
+\[ f(x) < 5 \mbox{ para todo } x \]
+
+Prestarle especial antenci?n al espacio antes de \verb/para/ y despu?s de \verb/todo/ dejado intencionalmente en el \verb/\mbox/; si el mismo no estuviera la expresi?n se ver?a
+\[ f(x) < 5 \mbox{para todo} x \]
+
+\subsection{Fuentes}
+
+Las siguientes son las fuentes que provee el modo matem?tico
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE FUENTES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+
+&		\LaTeX &				Render \\
+\hline\hline
+It\'alica &	\verb/ABCDEFGHIJKLM/ &			$ABCDEFGHIJKLM$ \\
+&		\verb/OPQRSTUVWXYZ/ &			$OPQRSTUVWXYZ$ \\
+&		\verb/abcdefghijklm/ &			$abcdefghijklm$ \\
+&		\verb/opqrstuvwxyz/ &			$opqrstuvwxyz$ \\
+\cline{2-3}
+&		\verb/\mathit{0123456789}/ &		$\mathit{0123456789}$ \\
+\hline
+Romana &	\verb/\mathrm{ABCDEFGHIJKLM}/ &		$\mathrm{ABCDEFGHIJKLM}$ \\
+&		\verb/\mathrm{OPQRSTUVWXYZ}/ &		$\mathrm{OPQRSTUVWXYZ}$ \\
+&		\verb/\mathrm{abcdefghijklm}/ &		$\mathrm{abcdefghijklm}$ \\
+&		\verb/\mathrm{opqrstuvwxyz}/ &		$\mathrm{opqrstuvwxyz}$ \\
+\cline{2-3}
+&		\verb/0123456789/ &			$0123456789$ \\
+\hline
+Negrita &	\verb/\mathbf{ABCDEFGHIJKLM}/ &		$\mathbf{ABCDEFGHIJKLM}$ \\
+&		\verb/\mathbf{OPQRSTUVWXYZ}/ &		$\mathbf{OPQRSTUVWXYZ}$ \\
+&		\verb/\mathbf{abcdefghijklm}/ &		$\mathbf{abcdefghijklm}$ \\
+&		\verb/\mathbf{opqrstuvwxyz}/ &		$\mathbf{opqrstuvwxyz}$ \\
+&		\verb/\mathbf{0123456789}/ &		$\mathbf{0123456789}$ \\
+\hline
+Sans Serif &	\verb/\mathsf{ABCDEFGHIJKLM}/ &		$\mathsf{ABCDEFGHIJKLM}$ \\
+&		\verb/\mathsf{OPQRSTUVWXYZ}/ &		$\mathsf{OPQRSTUVWXYZ}$ \\
+&		\verb/\mathsf{abcdefghijklm}/ &		$\mathsf{abcdefghijklm}$ \\
+&		\verb/\mathsf{opqrstuvwxyz}/ &		$\mathsf{opqrstuvwxyz}$ \\
+&		\verb/\mathsf{0123456789}/ &		$\mathsf{0123456789}$ \\
+\hline
+Monoespacio &	\verb/\mathtt{ABCDEFGHIJKLM}/ &		$\mathtt{ABCDEFGHIJKLM}$ \\
+&		\verb/\mathtt{OPQRSTUVWXYZ}/ &		$\mathtt{OPQRSTUVWXYZ}$ \\
+&		\verb/\mathtt{abcdefghijklm}/ &		$\mathtt{abcdefghijklm}$ \\
+&		\verb/\mathtt{opqrstuvwxyz}/ &		$\mathtt{opqrstuvwxyz}$ \\
+&		\verb/\mathtt{0123456789}/ &		$\mathtt{0123456789}$ \\
+\hline
+Caligr\'afica &	\verb/\mathcal{ABCDEFGHIJKLM}/ &	$\mathcal{ABCDEFGHIJKLM}$ \\
+&		\verb/\mathcal{OPQRSTUVWXYZ}/ &		$\mathcal{OPQRSTUVWXYZ}$ \\
+\hline
+\end{tabular}
+%\caption{Fuentes en \LaTeX}
+\end{center}
+%\end{figure}
+
+La fuente por omisi?n y la fuente \verb/\mathit/ son id?nticas en tipograf?a, s?lo cambia entre ellas el \emph{kerning}, compar?ndolas
+\begin{quote}
+\begin{verbatim}
+\[ ABCDEFGHIJKLMOPQRSTUVWXYZ \]
+\[ \mathit{ABCDEFGHIJKLMOPQRSTUVWXYZ} \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ ABCDEFGHIJKLMOPQRSTUVWXYZ \]
+\[ \mathit{ABCDEFGHIJKLMOPQRSTUVWXYZ} \]
+
+Los n?meros de la fuente predeterminada est?n tomados de la fuente \verb/\mathrm/. Se hace notar, adem?s, que la fuente \verb/\mathcal/ s?lo acepta letras may?sculas.
+
+Si escribi?ramos
+\begin{quote}
+\begin{verbatim}
+\[ \mathrm{P} (n) < 1 \mbox{ para todo } n
+\mbox{ perteneciente a } \mathbf N \]
+\end{verbatim}
+\end{quote}
+se ver?a
+\[ \mathrm{P} (n) < 1 \mbox{ para todo } n \mbox{ perteneciente a } \mathbf N \]
+
+\newpage
+
+\section{S?mbolos}
+
+\subsection{Letras griegas}
+
+Los primeros s?mbolos que veremos son las letras griegas, las mismas son
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE LETRAS GRIEGAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+&			\LaTeX &					Render \\
+\hline\hline
+Min\'usculas griegas &	\verb/\alpha, \beta, \gamma, \delta,/ &		$\alpha,\ \beta,\ \gamma,\ \delta,$ \\
+&			\verb/\epsilon, \zeta, \eta, \theta,/ &		$\epsilon,\ \zeta,\ \eta,\ \theta,$ \\
+&			\verb/\iota, \kappa, \lambda, \mu,/ &		$\iota,\ \kappa,\ \lambda,\ \mu,$ \\
+&			\verb/\nu, \xi, \pi, \rho,/ &			$\nu,\ \xi,\ \pi,\ \rho,$ \\
+&			\verb/\sigma, \tau, \upsilon, \phi,/ &		$\sigma,\ \tau,\ \upsilon,\ \phi,$ \\
+&			\verb/\chi, \psi, \omega./ &			$\chi,\ \psi,\ \omega.$ \\
+\hline
+May\'usculas griegas &	\verb/\Gamma, \Delta, \Theta, \Lambda,/ &	$\Gamma,\ \Delta,\ \Theta,\ \Lambda,$ \\
+&			\verb/\Xi, \Pi, \Sigma, \Upsilon,/ &		$\Xi,\ \Pi,\ \Sigma,\ \Upsilon,$ \\
+&			\verb/\Phi, \Psi, \Omega./ &			$\Phi,\ \Psi,\ \Omega.$ \\
+\hline
+Variables griegas &	\verb/\varepsilon, \vartheta, \varpi,/ &	$\varepsilon,\ \vartheta,\ \varpi,$ \\
+&			\verb/\varrho, \varsigma, \varphi./ &		$\varrho,\ \varsigma,\ \varphi.$ \\
+\hline
+\end{tabular}
+%\caption{Letras griegas en \LaTeX}
+\end{center}
+%\end{figure}
+
+Se hace notar al lector que no existe \verb/\omicron/; debe usarse la \verb/o/ latina como reemplazo de la misma; las may?sculas faltantes tambi?n se generan utilizando las letras latinas correspondientes. El grupo de s?mbolos de variables incluye grafismos de letras griegas que no son los normalizados, pero que son frecuentes en ecuaciones matem?ticas.
+
+Como ejemplo, si escribi?ramos
+\begin{quote}
+\begin{verbatim}
+\[ \mathcal{P}_3(x) = \alpha_3 x^3 + \alpha_2 x^2
++ \alpha_1 x + \alpha_0 \]
+\end{verbatim}
+\end{quote}
+ver?amos
+\[ \mathcal{P}_3(x) = \alpha_3 x^3 + \alpha_2 x^2 + \alpha_1 x + \alpha_0 \]
+
+\subsection{Operadores}
+
+Los siguientes son los operadores que pueden escribirse en el modo matem?tico
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE OPERADORES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+&		\LaTeX &					Render \\
+\hline\hline
+Comunes &	\verb/\pm, \mp,/ &				$\pm,\ \mp,$ \\
+&		\verb/\setminus, \wr, \bigcirc,/ &		$\setminus,\ \wr,\ \bigcirc,$ \\
+&		\verb/\cdot, \times, \div, \ast, \star,/ &	$\cdot,\ \times,\ \div,\ \ast,\ \star,$ \\
+&		\verb/\diamond, \circ, \bullet,/ &		$\diamond,\ \circ,\ \bullet,$ \\
+&		\verb/\cap, \cup, \uplus,/ &			$\cap,\ \cup,\ \uplus,$ \\
+&		\verb/\sqcap, \sqcup, \vee, \wedge,/ &		$\sqcap,\ \sqcup,\ \vee,\ \wedge,$ \\
+&		\verb/\triangleleft, \bigtriangleup,/ &		$\triangleleft,\ \bigtriangleup,$ \\
+&		\verb/\triangleright, \bigtriangledown,/ &	$\triangleright,\ \bigtriangledown,$ \\
+&		\verb/\oplus, \ominus, \otimes, \oslash,/ &	$\oplus,\ \ominus,\ \otimes,\ \oslash,$ \\
+&		\verb/\odot, \dagger, \ddagger, \amalg./ &	$\odot,\ \dagger,\ \ddagger,\ \amalg.$ \\
+\hline
+Grandes &	\verb/\sum, \prod, \coprod,/ &			$\displaystyle \sum,\ \prod,\ \coprod,$ \\
+&		\verb/\int, \oint,/ &				$\displaystyle \int,\ \oint,$ \\
+&		\verb/\bigcap, \bigcup, \bigsqcup,/ &		$\displaystyle \bigcap,\ \bigcup,\ \bigsqcup,$ \\
+&		\verb/\bigvee, \bigwedge, \biguplus,/ &		$\displaystyle \bigvee,\ \bigwedge,\ \biguplus,$ \\
+&		\verb/\bigodot, \bigotimes, \bigoplus./ &	$\displaystyle \bigodot,\ \bigotimes,\ \bigoplus.$ \\
+\hline
+Relacionales &	\verb/\leq, \geq, \ll, \gg,/ &			$\leq,\ \geq, \ll,\ \gg,$ \\
+&		\verb/\prec, \succ, \preceq, \succeq,/ &	$\prec,\ \succ,\ \preceq,\ \succeq,$ \\
+&		\verb/\subset, \supset,/ &			$\subset,\ \supset,$ \\
+&		\verb/\subseteq, \supseteq,/ &			$\subseteq,\ \supseteq,$ \\
+&		\verb/\sqsubseteq, \sqsupseteq,/ &		$\sqsubseteq,\ \sqsupseteq,$ \\
+&		\verb/\in, \ni, \vdash, \dashv,/ &		$\in,\ \ni,\ \vdash,\ \dashv,$ \\
+&		\verb/\equiv \models, \doteq,/ &		$\equiv,\ \models,\ \doteq,$ \\
+&		\verb/\sim, \simeq, \approx, \cong,/ &		$\sim,\ \simeq,\ \approx,\ \cong,$ \\
+&		\verb/\bowtie, \propto,/ &			$\bowtie,\ \propto,$ \\
+&		\verb/\asymp, \smile, \frown,/ &		$\asymp,\ \smile,\ \frown,$ \\
+&		\verb/\mid, \parallel, \perp./ &		$\mid,\ \parallel,\ \perp.$ \\
+\hline
+Negados &	\verb/\not=, \not\equiv,/ &			$\not=,\ \not\equiv,$ \\
+&		\verb/\not<, \not>,/ &				$\not<,\ \not>,$ \\
+&		\verb/\not\leq, \not\geq,/ &			$\not\leq,\ \not\geq,$ \\
+&		\verb/\not\prec, \not\succ,/ &			$\not\prec,\ \not\succ,$ \\
+&		\verb/\not\sim, \not\approx,/ &			$\not\sim,\ \not\approx,$ \\
+&		\verb/\not\preceq, \not\succeq,/ &		$\not\preceq,\ \not\succeq,$ \\
+&		\verb/\not\simeq, \not\cong,/ &			$\not\simeq,\ \not\cong,$ \\
+&		\verb/\not\subset, \not\supset,/ &		$\not\subset,\ \not\supset,$ \\
+&		\verb/\not\subseteq, \not\supseteq,/ &		$\not\subseteq,\ \not\supseteq,$ \\
+&		\verb/\not\sqsubseteq, \not\sqsupseteq,/ &	$\not\sqsubseteq,\ \not\sqsupseteq,$ \\
+&		\verb/\not\in, \not\ni,/ &			$\not\in,\ \not\ni,$ \\
+&		\verb/\not\asymp./ &				$\not\asymp.$ \\
+\hline
+\end{tabular}
+%\caption{Operadores en \LaTeX}
+\end{center}
+%\end{figure}
+
+Por ejemplo, si escribi?ramos
+
+\begin{quote}
+\begin{verbatim}
+\[ \vec u \cdot \vec{e_0} = 0 \mbox{ si y s?lo si }
+(\vec u \perp \vec{e_0}) \vee (\vec u = \vec 0) \]
+\end{verbatim}
+\end{quote}
+obtendr?amos
+\[ \vec u \cdot \vec{e_0} = 0 \mbox{ si y s?lo si }
+(\vec u \perp \vec{e_0}) \vee (\vec u = \vec 0) \]
+
+Los operadores de la secci?n \emph{Grandes} adem?s admiten el uso de sub?ndices y super?ndices, por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \int_0^1 x \, dx = 0.5 \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ \int_0^1 x \, dx = 0.5 \]
+
+En esta ecuaci?n puede verse el uso del espacio \verb/\,/ para separar la funci?n del diferencial.
+
+Ahora bien, si escribimos \verb/$\int_0^1 x \,dx$/ dentro del texto de p?rrafo veremos $\int_0^1 x \,dx$; esta ecuaci?n est? adaptada para entrar en una l?nea com?n de texto; en el caso de que quisi?ramos una ecuaci?n embebida en texto de p?rrafo pero que respete las proporciones de una ecuaci?n aislada debemos agregar el modificador \verb/\displaystyle/ al comienzo de nuestra ecuaci?n, de este modo si escribi?ramos \verb/$\displaystyle \int_0^1 x \,dx$/ se ver?a $\displaystyle \int_0^1 x \,dx$.
+
+\subsection{Fracciones y raices}
+
+Introduciremos dos herramientas m?s que nos ser?n ?tiles, fracciones y raices.
+
+Las fracciones se escriben como \verb/\frac{}{}/ siendo el primer grupo el numerador y el segundo el denominador; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \frac{x^2}{x^2 + y^2} + \frac12 +
+\frac1{1 + \frac{21}3 } \]
+\end{verbatim}
+\end{quote}
+genera
+\[ \frac{x^2}{x^2 + y^2} + \frac12 + \frac1{1 + \frac{21}3 } \]
+
+Las raices se generan con \verb/\sqrt[]{}/, en donde el grupo entre corchetes (que es optativo) indica el grado de la raiz y el grupo entre las llaves el contenido; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ h = \sqrt{x^2 + y^2} \]
+\[ g_n(x) = \sqrt[n]{f(x)} \]
+\end{verbatim}
+\end{quote}
+muestra
+\[ h = \sqrt{x^2 + y^2} \]
+\[ g_n(x) = \sqrt[n]{f(x)} \]
+
+\subsection{S?mbolos matem?ticos}
+
+La siguiente tabla muestra los s?mbolos matem?ticos que podemos utilizar en nuestras ecuaciones embebidas en \LaTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE S?MBOLOS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+& \LaTeX &								Render \\
+\hline\hline
+S\'imbolos &	\verb/\aleph, \hbar, \imath, \jmath, \ell, \wp,/ &	$\aleph,\ \hbar,\ \imath,\ \jmath,\ \ell,\ \wp,$ \\
+&		\verb/\Re, \Im, \partial, \prime, \nabla,/ &		$\Re,\ \Im,\ \partial,\ \prime,\ \nabla,$ \\
+&		\verb/\infty, \emptyset, \forall, \exists,/ &		$\infty,\ \emptyset,\ \forall,\ \exists,$ \\
+&		\verb/\top, \bot, \neg, \surd, \backslash,/ &		$\top,\ \bot,\ \neg,\ \surd,\ \backslash,$ \\
+&		\verb/\flat, \natural, \sharp,/ &			$\flat,\ \natural,\ \sharp,$ \\
+&		\verb/\angle, \triangle,/ &				$\angle,\ \triangle,$ \\
+&		\verb/\clubsuit, \diamondsuit,/ &			$\clubsuit,\ \diamondsuit,$ \\
+&		\verb/\heartsuit, \spadesuit./ &			$\heartsuit,\ \spadesuit.$ \\
+\hline
+Elipsis &	\verb/\cdots, \ldots; \vdots, \ddots./ &		$\cdots,\ \ldots;\ \vdots,\ \ddots.$ \\
+\hline
+Flechas &	\verb/\leftarrow, \rightarrow,/ &			$\leftarrow,\ \rightarrow,$ \\
+&		\verb/\longleftarrow, \longrightarrow,/ &		$\longleftarrow,\ \longrightarrow,$ \\
+&		\verb/\Leftarrow, \Rightarrow,/ &			$\Leftarrow,\ \Rightarrow,$ \\
+&		\verb/\Longleftarrow, \Longrightarrow,/ &		$\Longleftarrow,\ \Longrightarrow,$ \\
+&		\verb/\leftrightarrow, \Leftrightarrow,/ &		$\leftrightarrow,\ \Leftrightarrow,$ \\
+&		\verb/\longleftrightarrow, \Longleftrightarrow,/ &	$\longleftrightarrow,\ \Longleftrightarrow,$ \\
+&		\verb/\hookleftarrow, \hookrightarrow,/ &		$\hookleftarrow,\ \hookrightarrow,$ \\
+&		\verb/\leftharpoonup, \rightharpoonup,/ &		$\leftharpoonup,\ \rightharpoonup,$ \\
+&		\verb/\leftharpoondown, \rightharpoondown,/ &		$\leftharpoondown,\ \rightharpoondown,$ \\
+&		\verb/\rightleftharpoons,/ &				$\rightleftharpoons,$ \\
+&		\verb/\nearrow, \nwarrow,/ &				$\nearrow,\ \nwarrow,$ \\
+&		\verb/\searrow, \swarrow,/ &				$\searrow,\ \swarrow,$ \\
+&		\verb/\mapsto, \longmapsto./ &				$\mapsto,\ \longmapsto.$ \\
+\hline \hline
+\ldots		& \verb/\uparrow, \downarrow,/ &		$\uparrow,\ \downarrow,$ \\
+&		\verb/\Uparrow, \Downarrow,/ &				$\Uparrow,\ \Downarrow,$ \\
+&		\verb/\updownarrow, \Updownarrow./ &			$\updownarrow,\ \Updownarrow.$ \\
+\hline
+Llaves &	\verb/\lbrack, \rbrack; \lbrace, \rbrace;/ &		$\lbrack,\ \rbrack;\ \lbrace, \rbrace;$ \\
+&		\verb/\langle, \rangle; |; \|;/ &			$\langle,\ \rangle; |;\ \|;$ \\
+&		\verb/\lfloor, \rfloor; \lceil, \rceil./ &		$\lfloor, \rfloor; \lceil, \rceil.$ \\
+\hline
+\end{tabular}
+%\caption{S?mbolos en \LaTeX}
+\end{center}
+%\end{figure}
+
+Retomaremos el uso de los s?mbolos que se encuentran por debajo de la doble raya, en la tabla, en \emph{Delimitadores}, dos cap?tulos m?s adelante.
+
+Por ejemplo, si escribi?ramos
+\begin{quote}
+\begin{verbatim}
+\[ \forall z \in \mathbf C, z \not= 0,
+\exists\ z^{-1} / \ z.z^{-1} = 1 \]\end{verbatim}
+\end{quote}
+ver?amos
+\[ \forall z \in \mathbf C, z \not= 0, \exists\ z^{-1} / \ z.z^{-1} = 1 \]
+
+\subsection{Equivalencias}
+
+Existen nombres alternativos para algunos de los s?mbolos presentados, ellos suelen ser muchas veces de m?s utilidad que los originales dado que codifican un contexto en vez de una forma, las equivalencias entre s?mbolos son
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE EQUIVALENCIAS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l||l|l|}
+\hline
+&		\LaTeX &					Render \\
+\hline\hline
+Comunes &	\verb/\wedge: \land./ &				$\wedge: \land.$ \\
+\cline{2-3}
+&		\verb/\vee: \lor./ &				$\vee: \lor.$ \\
+\hline
+Relacionales &	\verb/\leq: \le./ &				$\leq:\ \le.$ \\
+\cline{2-3}
+&		\verb/\geq: \ge./ &				$\geq:\ \ge.$ \\
+\cline{2-3}
+&		\verb/\ni: \owns./ &				$\ni:\ \owns.$ \\
+\hline
+Negados &	\verb/\not=: \ne, \neq./ &			$\not=:\ \ne,\ \neq.$ \\
+\cline{2-3}
+&		\verb/\not\in: \notin./ &			$\not\in:\ \notin.$ \\
+\hline\hline
+S\'imbolos &	\verb/\neg: \lnot./ &				$\neg:\ \lnot.$ \\
+\hline
+Flechas &	\verb/\rightarrow: \to./ &			$\rightarrow:\ \to.$ \\
+\cline{2-3}
+&		\verb/\leftarrow: \gets./ &			$\leftarrow:\ \gets.$ \\
+\cline{2-3}
+&		\verb/x \Longleftrightarrow y: x \iff y./ &	$x \Longleftrightarrow y:\ x \iff y.$ \\
+\hline
+Llaves &	\verb/\lbrace: \{./ &				$\lbrace:\ \{.$ \\
+\cline{2-3}
+&		\verb/\rbrace: \}./ &				$\rbrace:\ \}.$ \\
+\cline{2-3}
+&		\verb/|: \vert./ &				$|:\ \vert.$ \\
+\cline{2-3}
+&		\verb/\|: \Vert./ &				$\|:\ \Vert.$ \\
+\hline\hline
+Otras &		\verb/a:b; a \colon b./ &			$a:b; a \colon b.$ \\
+\hline
+\end{tabular}
+%\caption{Equivalencias en \LaTeX}
+\end{center}
+%\end{figure}
+
+Notar que en varios de los s?mbolos al cambiar el contexto que se espera de ellos tambi?n cambia su espaciado con respecto a las equivalencias.
+
+Si escribi?ramos
+\begin{quote}
+\begin{verbatim}
+\[ f \colon \mathbf N \mapsto \mathbf R \]
+\end{verbatim}
+\end{quote}
+obtendr?amos
+\[ f \colon \mathbf N \longmapsto \mathbf R \]
+
+\subsection{Delimitadores}
+
+Si bien ya hemos visto en cap?tulos anteriores que \LaTeX\ reconoce par?ntesis, corchetes, etc?tera, en sus ecuaciones, los mismos no son delimitadores de bloques; es decir, no debemos usarlos para encerrar expresiones.
+Por ejemplo, si nosotros escribi?ramos
+\begin{quote}
+\begin{verbatim}
+\[ x ( \frac{ \frac{a}{b} }{ \frac{c}{d} } )
+= x ( \frac{ad}{bc} ) \]
+\end{verbatim}
+\end{quote}
+ver?amos 
+\[ x ( \frac{ \frac{a}{b} }{ \frac{c}{d} } ) = x ( \frac{ad}{bc} ) \]
+
+Puede observarse como el par?ntesis no se aplica a la fracci?n sino que tiene su altura fija como car?cter.
+
+Los bloques en las f?rmulas deben definirse entre \verb/\left <delim>/ y \verb/\right/ \verb/<delim>/, en donde \verb/<delim>/ es el delimitador que queramos aplicar. Volviendo al ejemplo anterior, con
+\begin{quote}
+\begin{verbatim}
+\[ x \left( \frac{ \frac{a}{b} }{ \frac{c}{d} } \right)
+= x \left ( \frac{ad}{bc} \right ) \]
+\end{verbatim}
+\end{quote}
+ahora obtenemos
+\[ x \left( \frac{ \frac{a}{b} }{ \frac{c}{d} } \right) = x \left ( \frac{ad}{bc} \right ) \]
+
+Son delimitadores todos aquellos s?mbolos presentados en la ?ltima secci?n de la tabla de \emph{S?mbolos Matem?ticos}, en el cap?tulo hom?logo; adem?s son delimitadores las barras derechas e invertida y, como ya vimos, los par?ntesis. Es decir, son delimitadores
+\begin{quote}
+\begin{verbatim}
+\uparrow, \downarrow, \Uparrow, \Downarrow,
+\updownarrow, \Updownarrow.
+\lbrack, \rbrack; \lbrace, \rbrace; \langle, \rangle;
+|; \|; \lfloor, \rfloor; \lceil, \rceil.
+\backslash; /; (, ).
+\end{verbatim}
+\end{quote}
+
+No es necesario que el delimitador izquierdo sea igual al derecho; y adem?s est? permitido usar un delimitador vac?o, para esto se usa un punto en el lugar del delimitador. S? es obligatorio que los delimitadores se encuentren de a pares izquierdo y derecho. Por ejemplo
+
+\begin{quote}
+\begin{verbatim}
+\[ \int_0^1 x \, dx = \left. \frac{x^2}{2} \right|_0^1 \]
+\end{verbatim}
+\end{quote}
+se renderiza como
+\[ \int_0^1 x \, dx = \left. \frac{x^2}{2} \right|_0^1 \]
+
+Adem?s de la posibilidad de utilizar los delimitadores antedichos para encerrar bloques, dado que estos s?mbolos son escalables, hay tambi?n modificadores para cambiarles el tama?o independientemente del contexto de los mismos. Los modificadores son \verb/\big/, \verb/\Big/, \verb/\bigg/ y \verb/\Bigg/; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \big\{ \Big\{ \bigg\{ \Bigg\{ \cdots
+\Bigg\} \bigg\} \Big\} \big\} \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ \big\{ \Big\{ \bigg\{ \Bigg\{ \cdots \Bigg\} \bigg\} \Big\} \big\} \]
+
+\subsection{Funciones}
+
+\LaTeX\ tambi?n provee de algunas de las funciones matem?ticas, a saber
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TABLA DE FUNCIONES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{figure}[ht!]
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\LaTeX &					Render \\
+\hline\hline
+\verb/\arccos, \cos, \csc, \exp, \ker,/ &	$\arccos,\ \cos,\ \csc,\ \exp,\ \ker,$ \\
+\verb/\limsup, \min, \sinh, \arcsin,/ &		$\limsup,\ \min,\ \sinh,\ \arcsin,$ \\
+\verb/\deg, \gcd, \lg, \ln, \Pr,/ &		$\deg,\ \gcd,\ \lg,\ \ln,\ \Pr,$ \\
+\verb/\sup, \arctan, \cot, \det, \hom,/ &	$\sup,\ \arctan,\ \cot,\ \det,\ \hom,$ \\
+\verb/\lim, \log, \sec, \tan, \arg,/ &		$\lim,\ \log,\ \sec,\ \tan,\ \arg,$ \\
+\verb/\coth, \dim, \inf, \liminf, \max,/ &	$\coth,\ \dim,\ \inf,\ \liminf,\ \max,$ \\
+\verb/\sin, \cosh, \tanh./ &			$\sin,\ \cosh,\ \tanh.$ \\
+\hline
+\end{tabular}
+%\caption{Funciones en \LaTeX}
+\end{center}
+%\end{figure}
+
+En primer lugar, puede verse que las funciones no se renderizan como caracteres sino que usan fuente \verb/\mathrm/ y con reglas propias.
+Varias de las funciones se comportan como operadores, a su vez; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \mathcal I = \inf_{\forall x} | f(x) | \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ \mathcal I = \inf_{\forall x} | f(x) | \]
+
+Si bien no se pueden agregar nuevas funciones en el modo matem?tico, m?s adelante veremos c?mo definir nuevos comandos; de momento s?lo disponemos de las que enlistamos en la tabla precedente.
+
+\subsection{Pilas y operadores}
+
+En esta secci?n veremos un par de comandos que nos permiten apilar texto.
+
+Con \verb/\stackrel{}{}/ podremos agregar un grupo sobre otro; esto nos puede servir para comentar operadores, el grupo superior complementa al inferior, por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ f(x) \stackrel{\circ}{\longrightarrow} 0 \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ f(x) \stackrel{\circ}{\longrightarrow} 0 \]
+
+Si quisi?ramos que una entidad se comportara como una funci?n, esto es, aceptando sub?ndices y super?ndices, entonces podemos usar el comando \verb/\mathop{}/. Si escribi?ramos
+\begin{quote}
+\begin{verbatim}
+\[ \mathop{\sum\sum}_{i,j = 0}^{n - 1} a_{i,j} \]
+\end{verbatim}
+\end{quote}
+se ver?a
+\[ \mathop{\sum\sum}_{i,j = 0}^{n - 1} a_{i,j} \]
+es decir, estamos creando un nuevo operador con el s?mbolo \verb/\sum\sum/ el cual acepta sub?ndices y super?ndices.
+
+\subsection{Otros operadores}
+
+Hay cuatro operadores m?s, poco documentados en \LaTeX, los cuales tienen un comportamiento diferente a los presentados en el cap?tulo correspondiente.
+
+El operador \verb/\choose/ sirve para representar n?meros combinatorios; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ {n \choose r} = \frac{n!}{r! (n - r)!} \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ {n \choose r} = \frac{n!}{r! (n - r)!} \]
+es importante el uso de las llaves dado que sino el \verb/choose/ afecta hasta el final de la ecuaci?n.
+
+El operador \verb/\atop/ dispone al operando izquierdo sobre el derecho; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ f(x) \atop g(x) \]
+\end{verbatim}
+\end{quote}
+muestra
+\[ f(x) \atop g(x) \]
+
+Los dos operadores restantes son variaciones del operador m?dulo. La primera es utiliz?ndolo como operador binario \verb/\bmod/, por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ 16 \bmod 9 = 7 \]
+\end{verbatim}
+\end{quote}
+genera
+\[ 16 \bmod 9 = 7 \]
+La segunda es utiliz?ndolo como un operador monario, en esta segunda forma se genera con \verb/\pmod{}/ en donde el grupo es el m?dulo; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ h(x) = v(x) \pmod{S} \]
+\end{verbatim}
+\end{quote}
+genera
+\[ h(x) = v(x) \pmod{S} \]
+
+\newpage
+
+\section{Ejemplos variados}
+
+\renewcommand{\labelenumi}{\roman{enumi} ]}
+
+Ahora que ya hemos presentado a la mayor parte de las herramientas que provee el modo matem?tico de \LaTeX, veremos algunos ejemplos integradores para repasar los conceptos y familiarizarnos con ecuaciones complejas.
+
+\subsubsection*{Definiciones}
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+\[ \{ e^{int} \} \mbox{ es base ortonormal de } L^2 [0,2\pi] \]
+\end{verbatim}
+\[ \{ e^{int} \} \mbox{ es base ortonormal de } L^2 [0,2\pi] \]
+
+\item
+\begin{verbatim}
+\[ V \mbox{ es acotado} \iff \exists \, m > 0 /
+ \, d(v_1,v_2) \leq m, \, \forall v_1, v_2 \in V \] 
+\end{verbatim}
+\[ V \mbox{ es acotado} \iff \exists \, m > 0 /
+ \, d(v_1,v_2) \leq m, \, \forall v_1, v_2 \in V \] 
+
+\item
+\begin{verbatim}
+\[ \sigma \mbox{-?lgebra} \iff (\emptyset \in \Sigma)
+ \land (X \in \Sigma)
+ \land (A \in \Sigma \Longrightarrow X \setminus A \in \Sigma)
+ \land \ldots \]
+\end{verbatim}
+\[ \sigma \mbox{-?lgebra} \iff (\emptyset \in \Sigma) \land (X \in \Sigma) \land (A \in \Sigma \Longrightarrow X \setminus A \in \Sigma) \land \ldots \]
+
+\end{enumerate}
+
+\subsubsection*{Fracciones, raices y exponentes}
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+\[ \frac{df}{dz} = \frac{df}{dZ} \cdot \frac{dZ}{dz} =
+ \frac{df}{dZ} \cdot \frac1{\frac{dz}{dZ}} =
+ \frac{df}{dZ} \cdot \frac1{G'(Z)} \]
+\end{verbatim}
+\[ \frac{df}{dz} = \frac{df}{dZ} \cdot \frac{dZ}{dz} =
+ \frac{df}{dZ} \cdot \frac1{\frac{dz}{dZ}} =
+ \frac{df}{dZ} \cdot \frac1{G'(Z)} \]
+
+\item
+\begin{verbatim}
+\[ x(t) \ast \frac{d\delta_\Delta(t)}{dt} =
+ \frac{x(t) - x(t - \Delta)}\Delta \cong \frac{dx(t)}{dt} \]
+\end{verbatim}
+\[ x(t) \ast \frac{d\delta_\Delta(t)}{dt} =
+ \frac{x(t) - x(t - \Delta)}\Delta \cong \frac{dx(t)}{dt} \]
+
+\item
+\begin{verbatim}
+\[ f(z) = C \frac
+ {(z - c_1)^{k_1} (z - c_2)^{k_2} \ldots (z - c_n)^{k_n}}
+ {(z - p_1)^{l_1} (z - p_2)^{l_2} \ldots (z - p_m)^{l_m}} \]
+\end{verbatim}
+\[ f(z) = C \frac{(z - c_1)^{k_1} (z - c_2)^{k_2} \ldots (z - c_n)^{k_n}}{(z - p_1)^{l_1} (z - p_2)^{l_2} \ldots (z - p_m)^{l_m}} \]
+
+\item
+\begin{verbatim}
+\[ n! \approx \sqrt{2\pi} \, e^{-n} \, n^{n + \frac12} \]
+\end{verbatim}
+\[ n! \approx \sqrt{2\pi} \, e^{-n} \, n^{n + \frac12} \]
+
+\end{enumerate}
+
+\subsubsection*{Delimitadores y funciones}
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+\[ P(a \leq X \leq b) =
+ \Phi \left( \frac{b - \mu}\sigma \right) -
+ \Phi \left( \frac{a - \mu}\sigma \right) \]
+\end{verbatim}
+\[ P(a \leq X \leq b) = \Phi \left( \frac{b - \mu}\sigma \right) - \Phi \left( \frac{a - \mu}\sigma \right) \]
+
+\item
+\begin{verbatim}
+\[n a^n u[n] \stackrel{\mathcal F}{\longleftrightarrow}
+ j \frac{d}{d\omega} \left( \frac1{1 - a e^{-j\omega}}
+ \right) \]
+\end{verbatim}
+\[n a^n u[n] \stackrel{\mathcal F}{\longleftrightarrow} j \frac{d}{d\omega} \left( \frac1{1 - a e^{-j\omega}} \right) \]
+
+\item
+\begin{verbatim}
+\[ \omega_k = r^{1/n} \left[
+ \cos \frac{\varphi + 2k\pi}n +
+ i \sin \frac{\varphi + 2k\pi}n \right] \]
+\end{verbatim}
+\[ \omega_k = r^{1/n} \left[ \cos \frac{\varphi + 2k\pi}n + i \sin \frac{\varphi + 2k\pi}n \right] \]
+
+\item
+\begin{verbatim}
+\[ \mathop{\lim_{x \to -\infty}}_{y \to +\infty}
+ \frac{\cos x}{\ln y} = 0 \]
+\end{verbatim}
+\[ \mathop{\lim_{x \to -\infty}}_{y \to +\infty}
+ \frac{\cos x}{\ln y} = 0 \]
+	
+\end{enumerate}
+
+\subsubsection*{Sumatorias y productorias}
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+\[ 2 \sum_{i = 1}^N i = 2 \left( \frac{N + 1}{2} \right) \]
+\end{verbatim}
+\[ 2 \sum_{i = 1}^N i = 2 \left( \frac{N + 1}{2} \right) \]
+
+\item
+\begin{verbatim}
+\[ \prod_{i = 0}^N x_i = x_0 x_1 \ldots x_N \]
+\end{verbatim}
+\[ \prod_{i = 0}^N x_i = x_0 x_1 \ldots x_N \]
+
+\item
+\begin{verbatim}
+\[ \bigcup_{i = 1}^n \overline{P_i} =
+ \overline{ \bigcap_{i = 1}^n P_i} \]
+\end{verbatim}
+\[ \bigcup_{i = 1}^n \overline{P_i} = \overline{ \bigcap_{i = 1}^n P_i} \]
+
+\item
+\begin{verbatim}
+\[ f(t) = \sum_{\nu = 0}^{n - m} \xi_\nu \delta^{(\nu)}(t) +
+ \sum_{\mu = 1}^q \sum_{\nu = 1}^{k_\mu}
+ \frac{\zeta_{\mu\nu}}{(\nu - 1)!}
+ t^{\nu - 1}e^\gamma{}_\mu{}^t 1_+(t) \]
+\end{verbatim}
+\[ f(t) = \sum_{\nu = 0}^{n - m} \xi_\nu \delta^{(\nu)}(t) + \sum_{\mu = 1}^q \sum_{\nu = 1}^{k_\mu} \frac{\zeta_{\mu\nu}}{(\nu - 1)!} t^{\nu - 1}e^\gamma{}_\mu{}^t 1_+(t) \]
+
+\end{enumerate}
+
+\subsubsection*{Integrales}
+
+\begin{enumerate}
+
+\item
+\begin{verbatim}
+\[ \int \frac1x \,dx = \ln x \]
+\end{verbatim}
+\[ \int \frac1x \,dx = \ln x \]
+
+\item
+\begin{verbatim}
+\[ \langle T'_u , \varphi \rangle =
+ - \langle T_u , \varphi' \rangle =
+ - \int_0^{+\infty} \varphi'(x) \,dx =
+ \varphi(0) = \langle \delta , \varphi \rangle \]
+\end{verbatim}
+\[ \langle T'_u , \varphi \rangle = - \langle T_u , \varphi' \rangle = - \int_0^{+\infty} \varphi'(x) \,dx = \varphi(0) = \langle \delta , \varphi \rangle \]
+
+\item
+\begin{verbatim}
+\[ \oint_{\mathcal C} \frac{f(z)}{z} \,dz = 2\pi i \, f(0) \]
+\end{verbatim}
+\[ \oint_{\mathcal C} \frac{f(z)}{z} \,dz = 2\pi i \, f(0) \]
+
+\item
+\begin{verbatim}
+\[ g(\lambda) = \int_{-\infty}^{+\infty} \widehat f(\xi)
+ \bar{\widehat w} (\xi - \lambda) \widehat w (\xi - \lambda)
+ e^{2i\pi\xi x} \,d\xi \]
+\end{verbatim}
+\[ g(\lambda) = \int_{-\infty}^{+\infty} \widehat f(\xi) \bar{\widehat w} (\xi - \lambda) \widehat w (\xi - \lambda) e^{2i\pi\xi x} \,d\xi \]
+
+\item
+\begin{verbatim}
+\[ u_{-k}(t) =
+ \underbrace{u(t) \ast \cdots \ast u(t)}_{k \mbox{ veces}} =
+ \int_{-\infty}^t u_{-(k - 1)}(\tau) \,d\tau \]
+\end{verbatim}
+\[ u_{-k}(t) = \underbrace{u(t) \ast \cdots \ast u(t)}_{k \mbox{ veces}} = \int_{-\infty}^t u_{-(k - 1)}(\tau) \,d\tau \]
+
+\item
+\begin{verbatim}
+\[ \int_0^1 \!\!\! \int_0^1 x^2 y^2 \,dx\,dy \]
+\end{verbatim}
+\[ \int_0^1 \!\!\! \int_0^1 x^2 y^2 \,dx\,dy \]
+Sobre el uso de los espacios negativos: si rendreriz?ramos \verb/\int_0^1/ \verb/\int_0^1/ sin el espaciado \verb/\!/ ver?amos $\displaystyle \int_0^1 \int_0^1$, lo cual no es apropiado.
+
+\item
+\begin{verbatim}
+\[ \int \!\!\!\! \int_{\mathbf{R^2}} f(x,y) \,dx\,dy \]
+\end{verbatim}
+\[ \int \!\!\!\! \int_{\mathbf{R^2}} f(x,y) \,dx\,dy \]
+
+\end{enumerate}
+
+\newpage
+
+\section{Comandos avanzados}
+
+\subsection{Matrices}
+
+Veremos en este cap?tulo el uso de matrices y vectores en \LaTeX; esta herramienta, adem?s de permitirnos escribir vectores, matrices y determinantes, nos permitir? manejar con precisi?n los espacios y alineaciones en nuestras ecuaciones.
+
+Las matrices se definen entre \verb/\begin{array}/ y \verb/\end{array}/; adem?s se debe especificar la alineaci?n de las diferentes columnas: \verb/c/ es alineaci?n al centro, \verb/l/ es alineaci?n a la izquierda y \verb/r/ es alineaci?n a la derecha. Por ejemplo, para definir una matriz de 2 columnas alineando la primera a la izquierda y la segunda a la derecha escribiremos
+\begin{quote}
+\begin{verbatim}
+\begin{array}{lr} ... \end{array}
+\end{verbatim}
+\end{quote}
+
+Los elementos de las matrices se definen en orden, de izquierda a derecha y de arriba hacia abajo; las columnas se separan con el indicador \verb/&/ y las filas con el indicador \verb/\\/; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \begin{array}{cc}
+a & b \\ 
+c & d
+\end{array} \]
+\end{verbatim}
+\end{quote}
+se ve como
+\[ \begin{array}{cc}
+a &	b \\ 
+c &	d
+\end{array} \]
+
+Para dibujar matrices al estilo matem?tico, debemos utilizar los delimitadores ya explicados en cap?tulos anteriores; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ I^{n \times n} =
+\left( \begin{array}{cccc}
+ 1 & 0 & \cdots & 0 \\ 
+ 0 & 1 & \cdots & 0 \\
+ \vdots & \vdots & \ddots & \vdots \\
+ 0 & 0 & \cdots & 1
+\end{array} \right) \]
+\end{verbatim}
+\end{quote}
+se ve como
+\[ I^{n \times n} =
+\left( \begin{array}{cccc}
+ 1 & 0 & \cdots & 0 \\ 
+ 0 & 1 & \cdots & 0 \\
+ \vdots & \vdots & \ddots & \vdots \\
+ 0 & 0 & \cdots & 1
+\end{array} \right) \]
+
+Con esta estrategia podemos escribir todo tipo de vectores, matrices y determinantes; si quisi?ramos omitir un elemento simplemente debemos dejarlo vac?o.
+
+Es importante hacer notar que las f?rmulas dentro de una matriz se renderizan con estilo de texto, para forzar el estilo de f?rmula independiente debemos usar \verb/\displaystyle/ como ya hemos visto en cap?tulos anteriores; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \mathcal{M}(a,b,c) =
+\left[ \begin{array}{cc}
+ \frac{a}{b} & \\
+ & \displaystyle \frac{b}{c}
+\end{array} \right] \]
+\end{verbatim}
+\end{quote}
+se ve
+\[ \mathcal{M}(a,b,c) =
+\left[ \begin{array}{cc}
+ \frac{a}{b} & \\
+ & \displaystyle \frac{b}{c}
+\end{array} \right] \]
+
+
+\subsection{Otros usos para las matrices}
+
+Como dijimos en el cap?tulo anterior el objeto \verb/array/ tambi?n sirve para poder presentar nuestro texto, en este cap?tulo veremos ejemplos y herramientas para lograrlo; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \delta [n] =
+\left\{ \begin{array}{ll}
+ 1 & \mbox{para } n = 0, \\
+ 0 & \forall \ n \not= 0.
+\end{array} \right. \]
+\end{verbatim}
+\end{quote}
+se ve como
+\[ \delta [n] =
+\left\{ \begin{array}{ll}
+ 1 & \mbox{para } n = 0, \\
+ 0 & \forall \ n \not= 0.
+\end{array} \right. \]
+
+Cuando queramos presentar texto en nuestras ecuaciones usaremos matrices; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\[ \begin{array}{ccccc}
+ \underbrace{f(x)} & = &
+  \underbrace{\sum_{n = 0}^N \left(
+  \frac{f^{(n)}(x_0)(x - x_0)^n}{n!} \right) } &  + &
+  \underbrace{\mathcal R_{\mathcal T_N}} \\
+ \mbox{funci?n} & &
+  \mbox{polinomio de Taylor (}\mathcal T_N \mbox{)} & &
+  \mbox{resto}
+\end{array} \]
+\end{verbatim}
+\end{quote}
+se compila
+\[ \begin{array}{ccccc}
+ \underbrace{f(x)} & = &
+  \underbrace{\sum_{n = 0}^N \left(
+  \frac{f^{(n)}(x_0)(x - x_0)^n}{n!} \right) } &  + &
+  \underbrace{\mathcal R_{\mathcal T_N}} \\
+ \mbox{funci?n} & &
+  \mbox{polinomio de Taylor (}\mathcal T_N \mbox{)} & &
+  \mbox{resto}
+\end{array} \]
+Notar que se podr?a haber tenido un resultado parecido usando sub?ndices en los \verb/\underbrace/s, como vimos en cap?tulos anteriores.
+
+Un ejemplo un poco m?s complejo en ecuaciones multilineas, con una alineaci?n cr?tica, podr?a ser
+\begin{quote}
+\begin{verbatim}
+\[ \begin{array}{cccccccccccc}
+ \displaystyle \sum_{i = 1}^N i & = & & 1 & + &
+  2 & + & \cdots & + & (N-1) & + & N \\
+ & = & & N & + & (N-1) & + & \cdots & + & 2 & + & 1 \\
+ & = & \displaystyle \frac12 & [ (N+1) & + & (N+1) &
+  + & \cdots & + & (N+1) & + & (N+1) ]
+\end{array} \]
+\end{verbatim}
+\end{quote}
+el cual se ve como
+\[ \begin{array}{cccccccccccc}
+ \displaystyle \sum_{i = 1}^N i & = & & 1 & + & 2 & + & \cdots & + & (N-1) & + & N \\
+ & = & & N & + & (N-1) & + & \cdots & + & 2 & + & 1 \\
+ & = & \displaystyle \frac12 & [ (N+1) & + & (N+1) & + & \cdots & + & (N+1) & + & (N+1) ]
+\end{array} \]
+
+Las matrices tambi?n nos sirven para escribir tablas, adem?s de \verb/c, l, r/ en la alineaci?n se puede usar \verb/|/ (pipe) para indicar lineas verticales entre las columnas; se puede utilizar \verb/\hline/ para dibujar lineas horizontales entre filas; por ejemplo el c?digo
+\begin{quote}
+\begin{verbatim}
+\[ \begin{array}{||c|r|r||}
+ \hline \hline
+ \mathbf n & \mathbf{2^n} & \mathbf{n!} \\
+ \hline
+ 1 & 2 & 1 \\
+ 2 & 4 & 2 \\
+ 3 & 8 & 6 \\
+ 4 & 16 & 24 \\
+ 5 & 32 & 120 \\
+ 6 & 64 & 720 \\
+ 7 & 128 & 5040 \\
+ \hline \hline
+\end{array} \]
+\end{verbatim}
+\end{quote}
+genera la siguiente tabla
+\[ \begin{array}{||c|r|r||}
+ \hline \hline
+ \mathbf n & \mathbf{2^n} & \mathbf{n!} \\
+ \hline
+ 1 & 2 & 1 \\
+ 2 & 4 & 2 \\
+ 3 & 8 & 6 \\
+ 4 & 16 & 24 \\
+ 5 & 32 & 120 \\
+ 6 & 64 & 720 \\
+ 7 & 128 & 5040 \\
+ \hline \hline
+\end{array} \]
+
+Adem?s se puede usar \verb/\cline{d-h}/ para indicar una linea horizontal desde la columna \verb/d/ hasta la columna \verb/h/; por ejemplo, volviendo a ecuaciones matem?ticas
+\begin{quote}
+\begin{verbatim}
+\[ \begin{array}{cccc}
+ & \displaystyle \sum_{i = 1}^n x^i &
+  = & x + x^2 + x^3 + \cdots + x^{n-1} + x^n \\
+ \displaystyle - & & \\
+ & \displaystyle x \sum_{i = 1}^n x^i & = &
+  x^2 + x^3 + x^4 + \cdots + x^n + x^{n+1} \\
+ \cline{2-2} \cline{4-4}
+ & \displaystyle (1-x) \sum_{i = 1}^n x^i & = &
+  x + x^{n+1}
+\end{array} \]
+\end{verbatim}
+\end{quote}
+genera
+\[ \begin{array}{cccc}
+ & \displaystyle \sum_{i = 1}^n x^i & = & x + x^2 + x^3 + \cdots + x^{n-1} + x^n \\
+ \displaystyle - & & \\
+ & \displaystyle x \sum_{i = 1}^n x^i & = & x^2 + x^3 + x^4 + \cdots + x^n + x^{n+1} \\
+ \cline{2-4}
+ & \displaystyle (1-x) \sum_{i = 1}^n x^i & = & x - x^{n+1}
+\end{array} \]
+
+\subsection{Modo \texttt{eqnarray}}
+
+Adem?s de los modos para presentar nuestras ecuaciones presentados en cap?tulo \emph{Modo matem?tico}, existe un cuarto modo que es el modo \verb/eqnarray/. Este modo est? pensado para escribir ecuaciones multilineas o ecuaciones que exceden al ancho de linea; se comporta como una matriz de tres columnas donde la primera alinea a derecha, la segunda al centro y la tercera a la izquierda.
+
+Las ecuaciones que queramos presentar en este modo deben encerrarse entre \verb/\begin{eqnarray}/ y \verb/\end{eqnarray}/; si quisi?ramos las mismas sin numeraci?n podemos utilizar \verb/eqnarray*/ en vez de \verb/eqnarray/; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\begin{eqnarray*}
+ \frac1{t - z} & = & \frac1{t - a - (z - a)} \\
+ & = & \frac1{t - a}
+  \left( \frac1{1 - \frac{z - a}{t - a}} \right) \\
+ & = & \frac1{t - a}
+  \left[ \sum_{i=0}^n \left( \frac{z - a}{t - a} \right)^n
+  + \frac{\left( \frac{z - a}{t - a} \right)^{n+1}}
+  {1 + \frac{z - a}{t - a}} \right]
+\end{eqnarray*}
+\end{verbatim}
+\end{quote}
+se ve
+\begin{eqnarray*}
+ \frac1{t - z} & = & \frac1{t - a - (z - a)} \\
+ & = & \frac1{t - a}
+  \left( \frac1{1 - \frac{z - a}{t - a}} \right) \\
+ & = & \frac1{t - a}
+  \left[ \sum_{i=0}^n \left( \frac{z - a}{t - a} \right)^n
+  + \frac{\left( \frac{z - a}{t - a} \right)^{n+1}}
+  {1 + \frac{z - a}{t - a}} \right]
+\end{eqnarray*}
+
+Dado que \LaTeX\ no corta automaticamente las lineas largas se provee un mecanismo para hacerlo dentro de \verb/\eqnarray/. Para esto utilizamos el comando \verb/lefteqn/; por ejemplo
+\begin{quote}
+\begin{verbatim}
+\begin{eqnarray*}
+ \lefteqn{ \sin z = z - \frac{z^3}{3!} +} \\
+ & & + \frac{z^5}{5!} - \frac{z^7}{7!} + \cdots
+\end{eqnarray*}
+\end{verbatim}
+\end{quote}
+se ve
+\begin{eqnarray*}
+ \lefteqn{ \sin z = z - \frac{z^3}{3!} +} \\
+ & & + \frac{z^5}{5!} - \frac{z^7}{7!} + \cdots
+\end{eqnarray*}
+es decir, expandiendo al primer elemento m?s all? de su columna.
+
+\subsection{Nuevos comandos}
+
+\LaTeX\ no provee herramientas para crear nuevos s?mbolos dentro del modo matem?tico; en cambio se provee el comando \verb/\newcommand/ el cual permite (m?s all? del modo matem?tico) crear nuevas expresiones en base a viejas. Las expresiones del tipo de \verb/\newcommand/ se definen en el encabezado del documento \LaTeX, en cualquier lugar entre \verb/\documentclass/ y \verb/\begin{document}/.
+La manera de definir un nuevo comando es \verb/\newcommand{}{}/ en donde el primer grupo es el nombre que recibir? el comando y el segundo es la expresi?n a mostrar; por ejemplo si defini?ramos
+\begin{quote}
+\begin{verbatim}
+\newcommand{\fdelta}{\delta_n (x)}
+\end{verbatim}
+\end{quote}
+al inicio del documento, al escribir
+\begin{quote}
+\begin{verbatim}
+\[ \fdelta \]
+\end{verbatim}
+\end{quote}
+ver?amos
+\[ \fdelta \]
+
+En este contexto es muy c?modo el uso de \verb/\mathop/ ya presentado en otros cap?tulos; por ejemplo si defini?ramos
+\begin{quote}
+\begin{verbatim}
+\newcommand{\limite}{\mathop{\mbox{L?mite}}}
+\end{verbatim}
+\end{quote}
+al escribir
+\begin{quote}
+\begin{verbatim}
+\[ \limite_{n \to \infty} \left( 1 + \frac1n \right)^n = e \]
+\end{verbatim}
+\end{quote}
+obtendr?amos
+\[ \limite_{n \to \infty} \left( 1 + \frac1n \right)^n = e \]
+
+Tambi?n se pueden definir nuevos comandos con argumentos, la sintaxis es \verb/\newcommand{}[]{}/, en donde el primer grupo entre llaves es el nombre del comando, el argumento entre corchetes especifica el n?mero de argumentos y el restante es la expansi?n del comando. Los argumentos se llaman al definir la ecuaci?n precediendo un numeral (\verb/#/) del n?mero de argumento; si escrib?eramos
+\begin{quote}
+\begin{verbatim}
+\newcommand{\prodint}[2]{\left\langle #1, #2 \right\rangle}
+\end{verbatim}
+\end{quote}
+en el lugar antedicho, al escribir
+\begin{quote}
+\begin{verbatim}
+\[ \prodint{T_f'}{\varphi} = - \prodint{T_f}{\varphi'} \]
+\end{verbatim}
+\end{quote}
+ver?amos
+\[ \prodint{T_f'}{\varphi} = - \prodint{T_f}{\varphi'} \]
+
+\subsection{Etiquetas y llamadas}
+
+Muchas veces es importante hacer referencia a ecuaciones por su n?mero, para esto se utilizan los comandos \verb/\label/ y \verb/\ref/; por ejemplo, el siguiente c?digo
+\setcounter{equation}{0}
+\begin{quote}
+\begin{verbatim}
+\begin{equation}
+ \mathrm M =
+ \lim_{\Delta V \to 0} \frac{\Delta \mathrm p_m}{\Delta V} =
+ \frac{d \mathrm p_m}{dV}
+\label{eqn:magn}
+\end{equation}
+Entonces, la magnetizaci?n ser? un vector cuya magnitud y
+direcci?n pueden variar de punto a punto dentro de la muestra.
+Ya que de (\ref{eqn:magn}) se tiene
+\[ d \mathrm p_m = \mathrm MdV \]
+\end{verbatim}
+\end{quote}
+genera
+\begin{quotation}
+\begin{equation}
+ \mathrm M =
+ \lim_{\Delta V \to 0} \frac{\Delta \mathrm p_m}{\Delta V} =
+ \frac{d \mathrm p_m}{dV}
+\label{eqn:magn}
+\end{equation}
+Entonces, la magnetizaci?n ser? un vector cuya magnitud y
+direcci?n pueden variar de punto a punto dentro de la muestra.
+Ya que de (\ref{eqn:magn}) se tiene
+\[ d \mathrm p_m = \mathrm MdV \]
+\end{quotation}
+
+Dado que \LaTeX\ compila los documentos en una sola pasada, suele ser necesario tener que recompilar el mismo para que las referencias se ajusten correctamente. Cada compilaci?n utiliza la numeraci?n recolectada por la compilaci?n anterior, si la misma hubiera cambiado de compilaci?n a compilaci?n las referencias no lo reflejar?n.
+
+Tambi?n es posible evitar que \LaTeX\ numere todas las ecuaciones en ciertos entornos, por ejemplo, el c?digo
+\setcounter{equation}{0}
+\begin{quote}
+\begin{verbatim}
+\begin{eqnarray}
+ V(X) & = & E[X - E(X)]^2 \\
+ & = & E\{X^2 - 2X\,E(X) + [E(X)]^2\} \\
+ & = & E(X^2) - 2E(X)E(X) + [E(X)]^2 \\
+ & = & E(X^2) - [E(X)]^2
+\end{eqnarray}
+\end{verbatim}
+\end{quote}
+genera
+\begin{eqnarray}
+ V(X) & = & E[X - E(X)]^2 \\
+ & = & E\{X^2 - 2X\,E(X) + [E(X)]^2\} \\
+ & = & E(X^2) - 2E(X)E(X) + [E(X)]^2 \\
+ & = & E(X^2) - [E(X)]^2
+\end{eqnarray}
+lo cual es un exceso, si no nos interesa hacer referencia a los pasos intermedios; con \verb/\nonumber/ se le indica a \LaTeX que no cuente esa linea; por ejemplo
+\setcounter{equation}{0}
+\begin{quote}
+\begin{verbatim}
+\begin{eqnarray}
+ \nonumber V(X) & = & E[X - E(X)]^2 \\
+ \nonumber & = & E\{X^2 - 2X\,E(X) + [E(X)]^2\} \\
+ \nonumber & = & E(X^2) - 2E(X)E(X) + [E(X)]^2 \\
+ & = & E(X^2) - [E(X)]^2
+\end{eqnarray}
+\end{verbatim}
+\end{quote}
+se compila
+\begin{eqnarray}
+ \nonumber V(X) & = & E[X - E(X)]^2 \\
+ \nonumber & = & E\{X^2 - 2X\,E(X) + [E(X)]^2\} \\
+ \nonumber & = & E(X^2) - 2E(X)E(X) + [E(X)]^2 \\
+ & = & E(X^2) - [E(X)]^2
+\end{eqnarray}
+
+\newpage
+
+\section{Conclusi?n}
+
+Lo dado en este trabajo intenta cubrir todos los comandos disponibles en el modo matem?tico de \LaTeX, adem?s de otros entornos ?tiles para trabajar con ecuaciones. El lector que desee profundizar m?s, encontrar? m?s detalles sobre los argumentos de algunos de los comandos presentados en referencias m?s completas~\cite{sg}; tambi?n se recomienda indagar sobre los otros aspectos que ofrece \LaTeX\ fuera del entorno matem?tico dado que provee otras utilidades, como por ejemplo los entornos para presentar teoremas.
+
+Es posible que m?s adelante se ampl?e este manual para incluir en ?l otras extensiones ?tiles que soporta \LaTeX, como por ejemplo el paquete de AMS, ya comentado antes; por el momento se considera a esta como una versi?n definitiva.
+
+Es bienvenido todo tipo de \emph{feedback} por parte de los lectores; ya sea corrigiendo errores, sugiriendo nuevos ejemplos, o comentando lo que consideren ?til para mejorar sucesivas ediciones del texto.
+
+Espero que lo hayan disfrutado.
+
+\flushright {\bf Sebasti?n Santisi} \\ Buenos Aires, \\ 27 de Enero de 2006.
+\flushleft
+
+\newpage
+
+\begin{thebibliography}{xxx}
+
+\bibitem[ams]{ams}
+	American Mathtematical Society. \\
+	\emph{``AMS-\LaTeX''} \\
+	\texttt{[http://www.ams.org/tex/amslatex.html]}.
+
+\bibitem[dek]{dek}
+	Knuth, Donald E.. \\
+	\emph{``Donald E. Knuth's homepage''} \\
+	\texttt{[http://www-cs-faculty.stanford.edu/\char126knuth/]}.
+
+\bibitem[drw]{drw}
+	Wilkins, David R.. \\
+	\emph{``Getting Started with \LaTeX''} \\
+	\texttt{[http://www.maths.tcd.ie/\char126dwilkins/LaTeXPrimer/]}. \\
+	A?o 1995.
+
+\bibitem[faq]{faq}
+	\emph{``\TeX Frequently Asked Questions on the Web''} \\
+	\texttt{[http://www.tex.ac.uk/cgi-bin/texfaq2html]}.
+
+\bibitem[ll]{ll}
+	Lamport, Leslie. \\
+	\emph{``Leslie Lamport's Home Page''} \\
+	\texttt{[http://research.microsoft.com/users/lamport/]}.
+
+\bibitem[ltx]{ltx}
+	LaTeX project. \\
+	\emph{``\LaTeX -- A document preparation system''} \\
+	\texttt{[http://www.latex-project.org/]}.
+
+\bibitem[lwb]{lwb}
+	Wikibooks (comunitario). \\
+	\emph{``\LaTeX''} \\
+	\texttt{[http://en.wikibooks.org/wiki/LaTeX]}.
+
+\bibitem[sg]{sg}
+	Green, Sheldon. \\
+	\emph{``Hypertext Help with \LaTeX''} \\
+	\texttt{[http://www-h.eng.cam.ac.uk/help/tpl/textprocessing/teTeX \\
+		/latex/latex2e-html/]}.
+
+\bibitem[tex]{tex}
+	American Mathematical Society. \\
+	\emph{``What is \TeX?''} \\
+	\texttt{[http://www.ams.org/tex/what-is-tex.html]}. \\
+	A?o 2006.
+
+\bibitem[tug]{tug}
+	TeX Users Group. \\
+	\emph{``\TeX\ Users Group web page''} \\
+	\texttt{[http://www.tug.org/]}.
+
+\end{thebibliography}
+
+\end{document}
