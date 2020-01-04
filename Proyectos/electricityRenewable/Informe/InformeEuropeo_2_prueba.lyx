@@ -1,0 +1,595 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding 
+\font_roman bookman
+\font_sans helvet
+\font_typewriter courier
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 3 8 -1
+\bullet 1 3 15 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+La Economía del Planeta Tierra (II)
+\end_layout
+
+\begin_layout Author
+Aurelio Gallardo Rodríguez
+\end_layout
+
+\begin_layout Date
+Noviembre de 2016
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size footnotesize
+\emph on
+La Economía del Planeta Tierra by Aurelio Gallardo Rodríguez, 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size footnotesize
+\emph on
+31667329D is licensed under a Creative Commons Reconocimiento-NoComercial-Compar
+tirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename by-nc-sa.eu_petit.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué estamos haciendo para evitar romper el equilibrio natural del planeta?
+ Las noticias no son halagüeñas.
+ Mientras nos gobiernen personas como Rafael Hernando, que se mofa de la
+ comunidad científica negando el cambio climático en el congreso
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://youtu.be/E2Amkviv2Qw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, o en el mundo triunfen las ideas que niegan el cambio climático por ser
+ la piedra en el zapato de un sistema que necesita más y más crecimiento,
+ más y más recursos, estamos condenados
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://internacional.elpais.com/internacional/2016/11/10/actualidad/1478776033_938523.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.elmundo.es/ciencia/2016/11/17/582d9176e5fdeaab208b456d.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Ya lo comenté en un artículo anterior: no es una cuestión de 
+\series bold
+\shape slanted
+creer
+\series default
+\shape default
+, es una cuestión de 
+\series bold
+\shape slanted
+demostrar
+\series default
+\shape default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.lavozdelsur.es/cambiar-climaticamente"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero en este artículo pretendo, con datos, averiguar qué hace nuestro país
+ respecto al cambio climático.
+ Muchas son las vertientes del problema, pero la causa principal de este
+ aumento es la emisión de gases de efecto invernadero, y, entre ellos, la
+ saturación del dióxido de carbono (
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+En un gráfico encontrado en el artículo de Ignacio Mártil, catedrático de
+ Electrónica de la UCM 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://blogs.publico.es/econonuestra/2014/10/01/como-es-el-sistema-de-produccion-de-energia-electrica-en-espana/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, muy recomendable de leer para entender la producción eléctrica en España,
+ se observa que la producción de energía renovable y limpia en España (solar,
+ eólica e hidraúlica) en el año 2014 fue del 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+19.5+14.6+4.6
+\end_layout
+
+\end_inset
+
+% siendo la producción de las energías basadas en combustibles fósiles 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+10.2+15.1+15.8
+\end_layout
+
+\end_inset
+
+% (ciclo combinado -gas-, carbón, fuel/gas/cogeneración).
+ El resto pertenece al sector nuclear, que, aunque en potencia instalada
+ su proporción no es más del 7.2% de todo el sector eléctrico español, aporta
+ el 20.2% de la energía consumida en el país.
+ El por qué es muy sencillo: 
+\series bold
+mientras estén operativas las centrales nucleares, no pueden apagarse
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+¿Podemos hacer más? ¿Hay quien hace más en Europa? Para contestar a estas
+ preguntas, podemos acceder a la página de Eurostats 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+(
+\begin_inset Quotes eld
+\end_inset
+
+euro estadísticas
+\begin_inset Quotes erd
+\end_inset
+
+).
+ En ella, encontré los siguientes informes:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+tsdcc330
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tsdcc330&plugin=1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: en esta tabla se muestra, por países y por años, un indicador que es la
+ razón (división) de la potencia producida por fuentes renovables (hidroeléctric
+a, solar, eólica, geotermal y biomasa/desperdicios) entre el total de energía
+ eléctrica consumida.
+ El total de energía eléctrica consumida comprende la producción por combustible
+s, sumando la importación de energía y restando la energía exportada.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+tipsau10
+\series default
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat/web/products-datasets/-/tipsau10"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: datos del producto interior bruto (GDP en inglés).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+demo_gind
+\series default
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat/web/products-datasets/-/demo_gind"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: datos de población (a uno de enero de cada año).
+\end_layout
+
+\begin_layout Standard
+Con todos estos datos, he podido sacar conclusiones entre los años 2006
+ a 2014.
+ Por ejemplo, en la siguiente gráfica:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Opciones del chunk....
+ datos, echo=FALSE, results='markup'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Flex Chunk
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+datos, echo=FALSE, results='markup', warnings=FALSE, message=FALSE, fig.height=4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO = read.csv("Resultados.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO$Anno=factor(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(dplyr) 
+\end_layout
+
+\begin_layout Plain Layout
+
+library(RColorBrewer) # Primero ordeno por año y despues por nombre Pais
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO=arrange(RESULTADO,Anno,nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=RESULTADO$ratio # ratio por pib 
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=matrix(m1,byrow = TRUE,ncol=length(levels(RESULTADO$nombrePais)))
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(m1)=levels(RESULTADO$nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+rownames(m1)=levels(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando 5 países 
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=apply(m1,FUN=mean,MARGIN=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=rbind(m1,Media)
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=sort(Media, decreasing = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+paisesEscogidos=c(names(Media)[1:3],"España",tail(names(Media),n=3))
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando años
+\end_layout
+
+\begin_layout Plain Layout
+
+m2=m1[rownames(m1)[1:length(rownames(m1))-1],paisesEscogidos]
+\end_layout
+
+\begin_layout Plain Layout
+
+colores=colorRampPalette(c("sienna","coral","brown"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+par(cex.axis=0.8) #nombres de países más pequeños.
+\end_layout
+
+\begin_layout Plain Layout
+
+barplot(m2,beside=TRUE,legend=TRUE,ylim=c(0,max(m2)+20)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # ,col=brewer.pal(length(rownames(m2)),"Greys"),
+\end_layout
+
+\begin_layout Plain Layout
+
+        ,col=colores(length(rownames(m2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+		,cex.axis=0.8, las=1 # etiquetas horizontales más pequeñas
+\end_layout
+
+\begin_layout Plain Layout
+
+		,main="Indicador de la tabla tsdcc330",
+\end_layout
+
+\begin_layout Plain Layout
+
+		args.legend=list("center",horiz=FALSE,cex=0.9))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

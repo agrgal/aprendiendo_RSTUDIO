@@ -1,0 +1,511 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding 
+\font_roman bookman
+\font_sans helvet
+\font_typewriter courier
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 3 8 -1
+\bullet 1 3 15 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+La Economía del Planeta Tierra (I)
+\end_layout
+
+\begin_layout Author
+Aurelio Gallardo Rodríguez
+\end_layout
+
+\begin_layout Date
+Diciembre de 2016
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size footnotesize
+\emph on
+La Economía del Planeta Tierra by Aurelio Gallardo Rodríguez, 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size footnotesize
+\emph on
+31667329D is licensed under a Creative Commons Reconocimiento-NoComercial-Compar
+tirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename by-nc-sa.eu_petit.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¡Paren el mundo, que me bajo! No sé si usted ha pensado en ello alguna vez;
+ más de uno, quizás tras ver un telediario, lo habrá pensado… Pues sepa
+ que el planeta Tierra se mueve, aproximadamente, a treinta kilómetros por
+ segundo, o ciento ocho mil kilómetros por hora, y rota a una velocidad
+ en su superficie de mil seiscientos setenta kilómetros por hora (en el
+ Ecuador).
+ Todo esto se traduce en que necesitará usted aproximadamente una energía
+ de 
+\begin_inset Formula $2.68\cdot10^{33}$
+\end_inset
+
+ julios (un julio es la unidad de energía en el Sistema Internacional de
+ Medidas
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://es.wikipedia.org/wiki/Julio_(unidad)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) para contrarrestar su movimiento y frenarla.
+ Este número es inmenso.
+ Por si no lo sabe, el 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $10^{33}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang spanish
+ (notación científica) significa que deberá mover la coma treinta y tres
+ veces a la derecha, rellenando con ceros si es necesario, para obtener
+ el número en un formato clásico decimal.
+ Sólo lo haré una vez en este artículo: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\emph on
+2.680.000.000.000.000.000.000.000.000.000.000 julios
+\end_layout
+
+\begin_layout Standard
+¿Y qué significa esto? Si no está usted acostumbrado a esta jerga científica
+ poco.
+ Quizás le interese más si le expreso el problema de otra forma.
+ Según la Wikipedia, la bomba termonuclear, de fusión de hidrógeno, más
+ potente que se ha construido fue la llamada Bomba del Zar, de unos 50 Mt
+ (cincuenta megatones).
+ Un megatón es el equivalente energético de la explosión de un millón de
+ toneladas de TNT (trinitrotolueno), con un equivalente a 
+\begin_inset Formula $4.184\cdot10^{15}$
+\end_inset
+
+ julios.
+ Un sencillo cálculo nos permite saber que necesitaríamos 
+\begin_inset Formula $1.28\cdot10^{16}$
+\end_inset
+
+ bombas del Zar para frenar la Tierra, unas doce mil ochocientos billones
+ (millones de millones) de bombas de ese tipo.
+\end_layout
+
+\begin_layout Standard
+¡Es más fácil que nos bajemos nosotros! Eso desde luego.
+ Para abandonar la influencia de la gravedad terrestre, se puede demostrar
+ que necesita usted adquirir una velocidad de aproximadamente once kilómetros
+ por segundo, lo que equivale a treinta nueve mil seiscientos kilómetros
+ por hora.
+ En términos energéticos, si lo disparasen a usted como a una bala, obviando
+ el rozamiento con el aire y otros términos menores, suponiendo que pesase
+ unos ochenta kilos, necesitaríamos una energía de 
+\begin_inset Formula $4.84\cdot10^{9}$
+\end_inset
+
+ Julios.
+ Proporcionalmente necesitaríamos una millonésima parte de un megatón para
+ conseguirlo, lo que equivale a más o menos una tonelada de TNT.
+\end_layout
+
+\begin_layout Standard
+¿Cree usted que hasta ahora no hemos hablado de Economía, como sugiere el
+ título? Se equivoca.
+ Lo que ocurre es que en la Naturaleza la moneda de cambio no es ninguna
+ divisa: 
+\series bold
+es la energía
+\series default
+.
+ Y el precio que debe pagar por abandonar la Tierra es el equivalente a
+ explotar una tonelada de TNT, ni más ni menos.
+ 
+\end_layout
+
+\begin_layout Standard
+Pero además, como si fuese usted en un vuelo comercial normal, quizás tenga
+ que pagar tarjetas de embarque, impuestos, aranceles y costes de equipaje;
+ supongo que querrá sobrevivir al espacio, donde no hay nada.
+ En ese caso, como ser vivo que es, necesita usted algo más: respirar, beber
+ y comer.
+ Necesita vivir en algún habitáculo con contenido suficiente en oxígeno
+ (en torno al 21%) mantenido a una presión adecuada; necesita hidratarse
+ de vez en cuando, reponer la pérdida de agua en su organismo, y necesita
+ reponer nutrientes que le aporten energía para mantener las funciones vitales
+ y sintetizar los productos que necesita el cuerpo humano (anabolismo).
+ 
+\end_layout
+
+\begin_layout Standard
+Necesitará además donde almacenar o producir todo lo anterior, y necesitará
+ más energía para mantener los procesos que le permitan esa producción o
+ almacenamiento.
+ La factura empieza a subir: más energía para mandar su peso y el de todo
+ lo que necesita al espacio, más energía para mantener funciones vitales
+ (aunque afortunadamente, si se mantiene en torno al sistema solar podrá
+ obtener energía de paneles solares) y tendrá que hacer una provisión de
+ tres elementos básicos: oxígeno (aire), agua y nutrientes, o bien almacenándolo
+s y llevándoselos consigo desde la Tierra o bien produciéndolos en su habitáculo
+ de alguna forma.
+ 
+\end_layout
+
+\begin_layout Standard
+¿Cómo lleva las finanzas? En términos energéticos, desde luego necesita
+ mucho más de lo que es normal llevando una vida cómoda de primer mundo
+ en la Tierra, y en términos “vitales” necesita además otras “monedas”:
+ oxígeno, agua y nutrientes.
+ Romper los equilibrios naturales y conseguir otros, como el que se consigue
+ abandonando el sistema Tierra y embarcándose en una nave que reproduzca
+ las necesidades básicas de un ser vivo, no es barato; no es naturalmente
+ barato, podríamos decir.
+ 
+\end_layout
+
+\begin_layout Standard
+Digamos además que se arrepiente.
+ Está usted ya casi en la órbita de Marte, piensa que no le gusta lo que
+ ve y quiere volver.
+ Entre otras cosas, porque no hay en el Sistema Solar nada, ningún planeta
+ o satélite, cuyas condiciones climáticas y vitales se asemejen a la Tierra.
+ Por ejemplo, Marte, que parece buen candidato, apenas tiene atmósfera y
+ ésta es más bien de dióxido de carbono.
+ Parece que un pasado tuvo más agua que ahora, y quizás conserve suficiente
+ en forma helada bajo la superficie.
+ Su temperatura media es de -46ºC con lo que, en general, no podría tener
+ permanentemente agua líquida, imprescindible para la vida terrestre.
+ Titán, el satélite de Saturno, presenta atmósfera y elementos líquidos
+ en su superficie: pero no hay agua (en abundancia y líquida), sino nitrógeno
+ e hidrocarburos.
+ En Venus, nos carbonizaríamos, y en los gigantes gaseosos, como Júpiter,
+ Saturno, Urano o Neptuno, simplemente las condiciones gravitacionales y
+ de temperatura ya harían que fuese imposible que nos instalásemos allí.
+\end_layout
+
+\begin_layout Standard
+Tampoco es que pueda ir mucho más lejos.
+ Por mucha película de ciencia ficción (o asumir teorías físicas avanzadas,
+ sin demostración empírica, que bordean los principios de causalidad y especulan
+ con tiempos negativos) que pueda ver usted, una masa finita no puede acelerarse
+ hasta la velocidad de la luz (sólo lo consiguen partículas sin masa en
+ reposo, como el fotón o el gravitón) así que necesitaría, a la velocidad
+ de la nave New Horizons (17.193 km/s) , lanzada a estudiar Plutón, Caronte
+ y el cinturón de Kuiper, unos setenta y seis mil años en alcanzar el siguiente
+ sistema solar más cercano que tenemos: Alfa Centauri, a 4.37 años-luz de
+ separación.
+\end_layout
+
+\begin_layout Standard
+¡Así que se vuelve! ¡Muy bien! Pero eso de devolver la energía que haya
+ gastado, o incluso la que tenga almacenada no es tan fácil.
+ En esto la Naturaleza no difiere mucho de un banco.
+ Parte de la energía que haya gastado usted jamás la recuperará.
+ Se habrá disipado en forma de calor, la forma más degradada de energía.
+ Los físicos tienen una magnitud que mide esa irreversibilidad, esa imposibilida
+d de volver a transformar un estado alcanzado en el mismo estado original
+ sin que nada se pierda por el camino: 
+\series bold
+la entropía
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Profundicemos un poco más en el concepto de entropía con un ejemplo.
+ Imagine una de esas botellas de cristal decorativas rellenas con arena
+ de colores formando bonitas bandas
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Por ejemplo, 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.lovethispic.com/image/102485/bottle-of-colored-sand"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+; las capas de arena de distinto color se disponen unas sobre otras ordenadament
+e.
+ Digamos que la ha diseñado usted, que ha cogido diferentes montoncitos
+ de arena, a cada uno le ha añadido un tinte, y con paciencia ha ido rellenando
+ la botella de las distintas capas: ¡felicidades! Ha conseguido tener un
+ sistema con cierto orden, le habrá costado digamos una hora de trabajo;
+ puede sentirse orgullosa u orgulloso de ello.
+\end_layout
+
+\begin_layout Standard
+Pero no es un sistema 
+\begin_inset Quotes eld
+\end_inset
+
+muy natural
+\begin_inset Quotes erd
+\end_inset
+
+ .
+ Sí, está en equilibrio pero puede haber un mejor equilibrio.
+ De hecho, imagínese el desastre: su hija pequeña de tres años ve la botella,
+ la coge, la agita y en dos segundos mezcla todos los montoncitos de arena
+ dentro de la botella.
+ ¡Con lo que le había costado hacerla! El sistema ha encontrado un equilibrio
+ muchísimo mejor con poca energía, un sistema más desordenado.
+ Pero eso no es todo: no sólo a su hija le ha costado menos esfuerzo desordenarl
+o que a usted diseñarla, sino que ahora viene lo peor: imagine que se pone
+ manos a la ímproba tarea de separar los granos desordenados uno a uno,
+ y clasificarlos por colores en montoncitos para reconstruir su obra...
+ ¿Cuánto esfuerzo estimaría que le iba a costar hacerlo? La entropía, entre
+ otras cosas, es una medida de la diferencia del esfuerzo que le cuesta
+ a usted conseguir ordenar un sistema y lo que cuesta, naturalmente, desordenarl
+o.
+ 
+\end_layout
+
+\begin_layout Standard
+Así que, siempre que se empeñe en ir en contra de las leyes físicas y ordene
+ un sistema, que sepa que a la Naturaleza le costará muy poco desordenarlo.
+ 
+\shape italic
+Siguiendo nuestra analogía financiera, la entropía viene a ser como los
+ intereses de los préstamos
+\shape default
+.
+ Por muy bajo que sea el interés, al final siempre paga usted más de lo
+ que le hayan prestado.
+ 
+\end_layout
+
+\begin_layout Standard
+Ya que habíamos regresado a la Tierra, y nos habíamos resignado a permanecer
+ en ella, mejor será que pensemos cómo cuidarla y conservarla.
+ Por lo menos, nuestro viaje ha servido para aprender algo más sobre la
+ Naturaleza que nos rodea...
+ ¡Espero! En nuestro propósito, y en términos energéticos, afortunadamente
+ la Tierra no es un sistema aislado.
+ Tiene un mecenas energético, alguien que nos regala energía constantemente:
+ el Sol, y parece que lo seguirá haciendo durante unos miles de millones
+ de años más.
+ Esa era la buena noticia; la mala, es que estamos agitando demasiado el
+ equilibrio que necesitamos para vivir, ese en el que la atmósfera tiene
+ una composición adecuada, el clima una variabilidad determinada y en el
+ que disponíamos de unos recursos determinados que estamos arrasando demasiado
+ rápidamente.
+\end_layout
+
+\begin_layout Standard
+¿Qué hacer entonces? ¿Resignarse? ¿Dejar de usar recursos naturales y volver
+ a la época de las cavernas? Son cuestiones complicadas que muchos nos hemos
+ preguntado.
+ Lo que podemos temer es que el ser humano, como especie, no venza la inercia,
+ la deriva social que tiene; no sea capaz de evitar romper el equilibrio
+ climático que disfrutamos, no sea capaz de evitar la degradación de los
+ ecosistemas que nos sustentan, no sea capaz de evitar la sobreexplotación...
+ Porque en ese momento, me temo, los grupos humanos entrarán en competencia
+ y todos sabemos lo que eso significa: la lucha por los recursos.
+ Ojalá, tengo la esperanza, que la radicalización de ideas en Estados Unidos
+ y media Europa no sea un síntoma de la idea anterior.
+ 
+\end_layout
+
+\begin_layout Standard
+¿De verdad que no podemos hacer otra cosa? Hace unos 12000 años, el ser
+ humano evoluciona dejando de ser nómada a ser sedentario, de ser depredador
+ a ser recolector.
+ Parece ser que el establecimiento en ciertos lugares del planeta (la cuenca
+ fértil en el Oriente Próximo) en los que el clima permitía durante todo
+ el año recolectar variados tipos de plantas, entre ellas, cereales, dieron
+ lugar a un cambio de mentalidad que reportó una ventaja crucial a la especie.
+ La agricultura y la ganadería parecen ser una consecuencia inmediata, pero
+ posterior, del sedentarismo.
+ Permítanme la licencia de imaginarme a esa primera tribu que dijo: ¡no!
+ ¡este año no nos vamos detrás de los búfalos para cazarlos! ¡nos quedamos
+ aquí y comeremos las frutas y los cereales que nos dé esta tierra! ¿Por
+ qué no hacemos lo mismo, salvando la distancia temporal? Por lo menos,
+ en un tema tan determinante para nuestro futuro, como es la forma en la
+ que usamos la energía y podamos polucionar o no la atmósfera deberíamos
+ decir: ¡no! ¡no vamos a quemar tanto combustible! ¡intentemos 
+\begin_inset Quotes eld
+\end_inset
+
+recolectar
+\begin_inset Quotes erd
+\end_inset
+
+ la energía limpia que nos proporciona nuestro Sol, en forma de, principalmente,
+ luz y viento! 
+\end_layout
+
+\begin_layout Standard
+Este será el tema de la segunda parte de nuestro artículo: la Economía de
+ la Tierra (II) ¿Qué estamos haciendo, aquí y ahora, por el planeta? ¿Qué
+ hacemos para evitar el cambio climático?
+\end_layout
+
+\end_body
+\end_document

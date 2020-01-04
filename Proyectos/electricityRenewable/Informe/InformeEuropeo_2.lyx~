@@ -1,0 +1,1878 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{endnotes}
+
+\let\footnote=\endnote
+\end_preamble
+\options hidelinks,spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding 
+\font_roman bookman
+\font_sans helvet
+\font_typewriter courier
+\font_math auto
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 0 3 8 -1
+\bullet 1 3 15 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+La Economía del Planeta Tierra (II)
+\end_layout
+
+\begin_layout Author
+Aurelio Gallardo Rodríguez
+\end_layout
+
+\begin_layout Date
+Noviembre de 2016
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size footnotesize
+\emph on
+La Economía del Planeta Tierra by Aurelio Gallardo Rodríguez, 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size footnotesize
+\emph on
+31667329D is licensed under a Creative Commons Reconocimiento-NoComercial-Compar
+tirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename by-nc-sa.eu_petit.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué estamos haciendo para evitar romper el equilibrio natural del planeta?
+ Las noticias no son halagüeñas.
+ Mientras nos gobiernen personas como Rafael Hernando, que se mofa de la
+ comunidad científica negando el cambio climático en el congreso
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "https://youtu.be/E2Amkviv2Qw"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, o en el mundo triunfen las ideas que niegan el cambio climático por ser
+ la piedra en el zapato de un sistema que necesita más y más crecimiento,
+ más y más recursos, estamos condenados
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://internacional.elpais.com/internacional/2016/11/10/actualidad/1478776033_938523.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.elmundo.es/ciencia/2016/11/17/582d9176e5fdeaab208b456d.html"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ Ya lo comenté en un artículo anterior: no es una cuestión de 
+\series bold
+\shape slanted
+creer
+\series default
+\shape default
+, es una cuestión de 
+\series bold
+\shape slanted
+demostrar
+\series default
+\shape default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.lavozdelsur.es/cambiar-climaticamente"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero en este artículo pretendo, con datos, averiguar qué hace nuestro país
+ respecto al cambio climático.
+ Muchas son las vertientes del problema, pero la causa principal de este
+ aumento es la emisión de gases de efecto invernadero, y, entre ellos, la
+ saturación del dióxido de carbono (
+\begin_inset Formula $CO_{2}$
+\end_inset
+
+) como principal agente responsable.
+\end_layout
+
+\begin_layout Standard
+En un gráfico encontrado en el artículo de Ignacio Mártil, catedrático de
+ Electrónica de la UCM
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://blogs.publico.es/econonuestra/2014/10/01/como-es-el-sistema-de-produccion-de-energia-electrica-en-espana/"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, muy recomendable de leer para entender la producción eléctrica en España,
+ se observa que la producción de energía renovable y limpia en España (solar,
+ eólica e hidraúlica) en el año 2014 fue del 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+19.5+14.6+4.6
+\end_layout
+
+\end_inset
+
+% siendo la producción de las energías basadas en combustibles fósiles 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+10.2+15.1+15.8
+\end_layout
+
+\end_inset
+
+% (ciclo combinado -gas-, carbón, fuel/gas/cogeneración).
+ El resto pertenece al sector nuclear, que, aunque en potencia instalada
+ su proporción no es más del 7.2% de todo el sector eléctrico español, aporta
+ el 20.2% de la energía consumida en el país.
+ El por qué es muy sencillo: 
+\series bold
+mientras estén operativas las centrales nucleares, no pueden apagarse
+\series default
+.
+ Así que más vale aprovechar lo que producen...
+\end_layout
+
+\begin_layout Standard
+¿Podemos hacer más? ¿Hay quien hace más en Europa? Para contestar a estas
+ preguntas, podemos acceder a la página de Eurostats
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (
+\begin_inset Quotes eld
+\end_inset
+
+euro estadísticas
+\begin_inset Quotes erd
+\end_inset
+
+).
+ En ella, se pueden encontrar los siguientes informes:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+tsdcc330
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat/tgm/table.do?tab=table&init=1&language=en&pcode=tsdcc330&plugin=1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: en esta tabla se muestra, por países y por años, un indicador (o 
+\begin_inset Quotes eld
+\end_inset
+
+ratio
+\begin_inset Quotes erd
+\end_inset
+
+) que es la razón en tantos por ciento (división) de la potencia producida
+ por fuentes renovables (hidroeléctrica, solar, eólica, geotermal y biomasa/desp
+erdicios) entre el total de energía eléctrica consumida.
+ El total de energía eléctrica consumida comprende, además, la producción
+ por combustibles, sumando la importación de energía y restando la energía
+ exportada.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+tipsau10
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat/web/products-datasets/-/tipsau10"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: datos del producto interior bruto (GDP en inglés).
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+demo_gind
+\series default
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset href
+LatexCommand href
+target "http://ec.europa.eu/eurostat/web/products-datasets/-/demo_gind"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+: datos de población (a uno de enero de cada año).
+\end_layout
+
+\begin_layout Standard
+Con todos estos datos, se pueden extraer conclusiones entre los años 2006
+ a 2014.
+ Por ejemplo, en la siguiente gráfica 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:fig1"
+
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+Opciones del chunk....
+ datos, echo=FALSE, results='markup'
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "60col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Flex Chunk
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+datos, echo=FALSE, results='markup', warnings=FALSE, message=FALSE, fig.height=4,
+ fig.pos="H"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO = read.csv("Resultados.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO$Anno=factor(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(dplyr) 
+\end_layout
+
+\begin_layout Plain Layout
+
+library(RColorBrewer) # Primero ordeno por año y despues por nombre Pais
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO=arrange(RESULTADO,Anno,nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=RESULTADO$ratio # ratio por pib 
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=matrix(m1,byrow = TRUE,ncol=length(levels(RESULTADO$nombrePais)))
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(m1)=levels(RESULTADO$nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+rownames(m1)=levels(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando 5 países 
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=apply(m1,FUN=mean,MARGIN=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=rbind(m1,Media)
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=sort(Media, decreasing = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+paisesEscogidos=c(names(Media)[1:3],"España",tail(names(Media),n=3))
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando años
+\end_layout
+
+\begin_layout Plain Layout
+
+m2=m1[rownames(m1)[1:length(rownames(m1))-1],paisesEscogidos]
+\end_layout
+
+\begin_layout Plain Layout
+
+colores=colorRampPalette(c("sienna","coral","brown"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+par(cex.axis=0.8) #nombres de países más pequeños.
+\end_layout
+
+\begin_layout Plain Layout
+
+barplot(m2,beside=TRUE,legend=TRUE,ylim=c(0,max(m2)+20)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # ,col=brewer.pal(length(rownames(m2)),"Greys"),
+\end_layout
+
+\begin_layout Plain Layout
+
+        ,col=colores(length(rownames(m2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+		,cex.axis=0.8, las=1 # etiquetas horizontales más pequeñas
+\end_layout
+
+\begin_layout Plain Layout
+
+		,args.legend=list(x=60,y=120,horiz=FALSE,cex=0.7))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\size small
+Indicador de la tabla 
+\series bold
+tsdcc330
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fig1"
+
+\end_inset
+
+
+\series default
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la tabla están representados los tres países con mayor ratio (de media)
+ de la Unión Europea, y sus resultados desde el año 2006 al 2014 (años para
+ los que se disponen datos), junto con los datos de España y de los tres
+ países a la cola de producción de energía renovable.
+ Es curioso el caso de Noruega, que tiene indicadores superiores al 100%:
+ produce más energía renovable de la que consume.
+ En Islandia observamos también altos ratios, con un espectacular pico en
+ 2007 (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+m2[c("2007"),c("Islandia")]
+\end_layout
+
+\end_inset
+
+%), y Austria es un país que tiene una envidiable media de 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Austria"],1)
+\end_layout
+
+\end_inset
+
+% en la producción de este tipo de energías.
+\end_layout
+
+\begin_layout Standard
+España ocupa el puesto 11 en este ranking, con una media de 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["España"],1)
+\end_layout
+
+\end_inset
+
+% y una progresión positiva, según Eurostats, del año 2006 al 2014.
+ Por la cola encontramos a tres países pequeños: Luxemburgo (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Luxemburgo"],1)
+\end_layout
+
+\end_inset
+
+%), Chipre (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Chipre"],1)
+\end_layout
+
+\end_inset
+
+%) y Malta (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Malta"],1)
+\end_layout
+
+\end_inset
+
+%)
+\end_layout
+
+\begin_layout Standard
+Aunque el gráfico es, en sí explícito, no es suficiente.
+ ¿Podemos comparar a España con Noruega, o con Islandia? ¿Puede compararse
+ Luxemburgo o Malta a nosotros? Las condiciones de unos u otros en cuanto
+ a población, territorio o capacidad económica son, ciertamente, distintas.
+ El estudio por tanto prosigue escalando el indicador y transformándolo
+ en otro, en el que se tenga en cuenta alguno de estos parámetros.
+ Por ejemplo, si dividimos el indicador entre el PIB de cada país por año
+ y escalamos multiplicando por un factor de diez mil , se obtiene la siguiente
+ gráfica 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:fig2"
+
+\end_inset
+
+...
+ 
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "60col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+datos2, echo=FALSE, results='markup', warnings=FALSE, message=FALSE, fig.height=4
+, fig.pos="H"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO = read.csv("Resultados.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO$Anno=factor(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(dplyr) 
+\end_layout
+
+\begin_layout Plain Layout
+
+library(RColorBrewer) # Primero ordeno por año y despues por nombre Pais
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO=arrange(RESULTADO,Anno,nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=RESULTADO$ratio.por.PIB # ratio por pib 
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=matrix(m1,byrow = TRUE,ncol=length(levels(RESULTADO$nombrePais)))
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(m1)=levels(RESULTADO$nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+rownames(m1)=levels(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando 5 países 
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=apply(m1,FUN=mean,MARGIN=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=rbind(m1,Media)
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=sort(Media, decreasing = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+paisesEscogidos=c(names(Media)[1:5],"España")
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando años
+\end_layout
+
+\begin_layout Plain Layout
+
+m2=m1[rownames(m1)[1:length(rownames(m1))-1],paisesEscogidos]
+\end_layout
+
+\begin_layout Plain Layout
+
+colores=colorRampPalette(c("#14063A","#4F608F","#0E494E"))
+\end_layout
+
+\begin_layout Plain Layout
+
+# colores=colorRampPalette(c(rgb(0.502,0.278,0.08,1), rgb(0.33,0.278,0,1),rgb(0.02,0.08
+,0.22,1)), alpha = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+par(cex.axis=0.8) #nombres de países más pequeños.
+\end_layout
+
+\begin_layout Plain Layout
+
+barplot(m2,beside=TRUE,legend=TRUE,ylim=c(0,max(m2)+5)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # ,col=brewer.pal(length(rownames(m2)),"Greys"),
+\end_layout
+
+\begin_layout Plain Layout
+
+        ,col=colores(length(rownames(m2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+		,cex.axis=0.8, las=1 # etiquetas horizontales más pequeñas
+\end_layout
+
+\begin_layout Plain Layout
+
+		,args.legend=list(x=60,y=120,horiz=FALSE,cex=0.7))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nombresMedia=rev(names(Media))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\size small
+Indicador dividido entre el PIB por año 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fig2"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si se tiene un indicador relativamente alto y un PIB relativamente bajo,
+ se estará muy bien situado en la misma 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:fig2"
+
+\end_inset
+
+.
+ Represento los primeros cinco países y España (desaparecida casi del gráfico).
+ Destaca el esfuerzo de países emergentes como Letonia (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Letonia"],1)
+\end_layout
+
+\end_inset
+
+ - de media -), Eslovenia (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Eslovenia"],1)
+\end_layout
+
+\end_inset
+
+), Croacia (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Croacia"],1)
+\end_layout
+
+\end_inset
+
+), o Estonia (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Estonia"],1)
+\end_layout
+
+\end_inset
+
+), siendo Islandia (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Islandia"],1)
+\end_layout
+
+\end_inset
+
+), de nuevo la que mayor esfuerzo ha realizado según este cálculo.
+ España (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["España"],2)
+\end_layout
+
+\end_inset
+
+) ocupa ahora el octavo puesto por la cola, tras 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[1]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[2]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[4]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[5]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[6]
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[7]
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Me gustaría comentar el caso de Islandia.
+ A tenor de sus resultados, en el indicador y en su PIB, en el año 2007
+ alcanza el máximo de ambos (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+RESULTADO$ratio[RESULTADO['Anno']=="2007" & RESULTADO['nombrePais']=="Islandia"]
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+as.character(RESULTADO$PIB[RESULTADO['Anno']=="2007" & RESULTADO['nombrePais']=="
+Islandia"])
+\end_layout
+
+\end_inset
+
+ mill.
+ €) y decrece, bruscamente, en 2008 (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+RESULTADO$ratio[RESULTADO['Anno']=="2008" & RESULTADO['nombrePais']=="Islandia"]
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+as.character(RESULTADO$PIB[RESULTADO['Anno']=="2008" & RESULTADO['nombrePais']=="
+Islandia"])
+\end_layout
+
+\end_inset
+
+ mill.
+ €).
+ Parece lógico suponer que este descenso estaría provocado por la crisis
+ económica.
+ En la gráfica, sin embargo, la relación 
+\shape slanted
+indicador/PIB
+\shape default
+ sigue creciendo hasta 2009: a pesar de que el PIB en este año baja mucho
+ (el más bajo del período -
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+as.character(RESULTADO$PIB[RESULTADO['Anno']=="2009" & RESULTADO['nombrePais']=="
+Islandia"])
+\end_layout
+
+\end_inset
+
+ -) los islandeses aumentaron la producción de energía eléctrica de carácter
+ renovable en unos 2 puntos (
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+RESULTADO$ratio[RESULTADO['Anno']=="2009" & RESULTADO['nombrePais']=="Islandia"]
+\end_layout
+
+\end_inset
+
+).
+ A partir de 2010 ambos indicadores aumentan, pero la relación baja porque
+ el PIB parece crecer a mayor ritmo que el indicador.
+ Podríamos afirmar, sin temor a no equivocarnos demasiado, que Islandia,
+ a pesar de la crisis, ha sabido estos años mantener alta su producción
+ de energía eléctrica de carácter renovable.
+\end_layout
+
+\begin_layout Standard
+Podríamos preguntarnos...
+ ¿Por qué países tan pequeños ofrecen estos resultados? ¿Han realizado un
+ mayor esfuerzo en promover las energías renovables? ¿O es un problema de
+ escalabilidad, en el que, simplemente, pocas instalaciones de este tipo
+ ya proporcionan las necesidades de sus habitantes? ¿O acaso son países
+ más agraciados por las condiciones climáticas que favorecen la producción
+ de carácter renovable? Seguramente las respuestas no obedezcan a uno sólo
+ de estos factores, sino a una combinación de ellos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Insertar SALTO DE LÍNEA CORTADA
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+Para responder mejor a las preguntas anteriores, estudiaremos también 
+\shape slanted
+el ratio por habitante
+\shape default
+, mediante la gráfica 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:fig3"
+
+\end_inset
+
+.
+ En ella dividimos el ratio por la población censada por año en cada país
+ (escalada en un factor de 10 millones).
+ Contestamos así a la pregunta: ¿qué proporción de energía eléctrica de
+ carácter renovable se produce por habitante?
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Wrap figure
+lines 12
+placement l
+overhang 0in
+width "30col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Flex Chunk
+status open
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+datos3, echo=FALSE, results='markup', warnings=FALSE, message=FALSE, fig.height=4
+, fig.pos="H"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO = read.csv("Resultados.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO$Anno=factor(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(dplyr) 
+\end_layout
+
+\begin_layout Plain Layout
+
+library(RColorBrewer) # Primero ordeno por año y despues por nombre Pais
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO=arrange(RESULTADO,Anno,nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=RESULTADO$ratio.por.poblacion # ratio por pib 
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=matrix(m1,byrow = TRUE,ncol=length(levels(RESULTADO$nombrePais)))
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(m1)=levels(RESULTADO$nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+rownames(m1)=levels(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando 5 países 
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=apply(m1,FUN=mean,MARGIN=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=rbind(m1,Media)
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=sort(Media, decreasing = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+paisesEscogidos=c(names(Media)[1:2],"España")
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando años
+\end_layout
+
+\begin_layout Plain Layout
+
+m2=m1[rownames(m1)[1:length(rownames(m1))-1],paisesEscogidos]
+\end_layout
+
+\begin_layout Plain Layout
+
+colores=colorRampPalette(c("#23611F","#4F804C"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+par(cex.axis=0.8) #nombres de países más pequeños.
+\end_layout
+
+\begin_layout Plain Layout
+
+barplot(m2,beside=TRUE,legend=TRUE,ylim=c(0,max(m2)*1.1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # ,col=brewer.pal(length(rownames(m2)),"Greys"),
+\end_layout
+
+\begin_layout Plain Layout
+
+        ,col=colores(length(rownames(m2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+		,cex.axis=0.8, las=1 # etiquetas horizontales más pequeñas
+\end_layout
+
+\begin_layout Plain Layout
+
+		,args.legend=list(x=60,y=3000,horiz=FALSE,cex=0.7))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\size small
+Indicador dividido entre el nº de habitantes por año (Islandia,Noruega y
+ España) 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fig3"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Represento sólo tres países: los dos primeros, Islandia y Noruega, y España.
+ De nuevo Islandia destaca, y, según este indicador, por mucho.
+ La relación 
+\shape slanted
+indicador/población
+\shape default
+ tiene una media de 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+round(Media["Islandia"],0)
+\end_layout
+
+\end_inset
+
+.
+ Por este dato, y por el de la anterior gráfica, se puede afirmar que 
+\series bold
+\shape slanted
+Islandia es el país de la U.E.
+ que mayor esfuerzo hace por producir energía eléctrica renovable
+\series default
+\shape default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Veamos, ahora en qué lugar se encuentra España según este cálculo, el del
+ 
+\shape italic
+indicador/población
+\shape default
+.
+ Construyendo la gráfica 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:fig4"
+
+\end_inset
+
+ de todos los países excepto Islandia (del que ya hemos hablado), vemos
+ que en segundo lugar encontramos a Noruega y en octavo desde el final,
+ de nuevo, a 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[8]
+\end_layout
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+placement th
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Flex Chunk
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+datos4, echo=FALSE, results='asis', warnings=FALSE, message=FALSE, fig.height=3,
+ fig.width=7, fig.pos="H"
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO = read.csv("Resultados.csv")
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO$Anno=factor(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(dplyr) 
+\end_layout
+
+\begin_layout Plain Layout
+
+library(RColorBrewer) # Primero ordeno por año y despues por nombre Pais
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+RESULTADO=arrange(RESULTADO,Anno,nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=RESULTADO$ratio.por.poblacion # ratio por pib 
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=matrix(m1,byrow = TRUE,ncol=length(levels(RESULTADO$nombrePais)))
+\end_layout
+
+\begin_layout Plain Layout
+
+colnames(m1)=levels(RESULTADO$nombrePais)
+\end_layout
+
+\begin_layout Plain Layout
+
+rownames(m1)=levels(RESULTADO$Anno)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando 5 países 
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=apply(m1,FUN=mean,MARGIN=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+m1=rbind(m1,Media)
+\end_layout
+
+\begin_layout Plain Layout
+
+Media=sort(Media, decreasing = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+paisesEscogidos=c(names(Media)[2:length(names(Media))])
+\end_layout
+
+\begin_layout Plain Layout
+
+#Seleccionando años
+\end_layout
+
+\begin_layout Plain Layout
+
+m2=m1[rownames(m1)[1:length(rownames(m1))-1],paisesEscogidos]
+\end_layout
+
+\begin_layout Plain Layout
+
+colores=colorRampPalette(c("#E03200","#E06800","#E08900"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+par(cex.axis=0.5) #nombres de países más pequeños.
+\end_layout
+
+\begin_layout Plain Layout
+
+barplot(m2,beside=TRUE,legend=TRUE,ylim=c(0,300)
+\end_layout
+
+\begin_layout Plain Layout
+
+        # ,col=brewer.pal(length(rownames(m2)),"Greys"),
+\end_layout
+
+\begin_layout Plain Layout
+
+		# ,xaxt="n" # Quita los nombres
+\end_layout
+
+\begin_layout Plain Layout
+
+        ,col=colores(length(rownames(m2)))
+\end_layout
+
+\begin_layout Plain Layout
+
+		,cex.axis=0.8, las=2 # etiquetas horizontales más pequeñas
+\end_layout
+
+\begin_layout Plain Layout
+
+		,args.legend=list(x=250,y=300,horiz=TRUE,cex=0.5))
+\end_layout
+
+\begin_layout Plain Layout
+
+# text(cex=1,x=x+1, y=-1.25, paisesEscogidos, xpd=TRUE, srt=45, pos=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+nombresMedia=rev(paisesEscogidos)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\size small
+Indicador dividido entre el nº de habitantes por año 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:fig4"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es curioso pues observar que los países europeos que se suponen más avanzados
+ son los que realizan menos esfuerzo por habitante para generar energía
+ eléctrica renovable.
+ En último lugar encontramos a 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[1]
+\end_layout
+
+\end_inset
+
+, seguidos de 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[2]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[3]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[4]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[5]
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[6]
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+nombresMedia[7]
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Concluyendo: a tenor de los datos de este pequeño estudio, nuestro país
+ está muy mal situado en los rankings de producción de energías renovables.
+ Aunque ocupa la 11ª posición en la primera gráfica (indicador de la tabla
+ 
+\series bold
+tsdcc330
+\series default
+ - cálculos medios en el período -) , 
+\shape italic
+proporcionalmente a su PIB o el número de habitantes
+\shape default
+ se observa que no se está realizando el esfuerzo de otros países más pequeños,
+ como Islandia, Noruega, Letonia o Eslovenia.
+ Las razones de esta mala clasificación no creo que debamos encontrarlas
+ en afirmar que España no tiene potencial para producir energía renovable;
+ muchos creen que una combinación adecuada de instalaciones eólicas y solares
+ (en sus variantes), principalmente, podrían conseguir una casi segura independe
+ncia en el consumo de energías fósiles de nuestro país, al menos en el sector
+ eléctrico.
+ Otros lo están consiguiendo...
+ ¿Por qué no nosotros? Es muy curioso observar quiénes están en el vagón
+ de cola, los 
+\begin_inset Quotes eld
+\end_inset
+
+supuestos
+\begin_inset Quotes erd
+\end_inset
+
+ países más importantes de Europa.
+ ¿Por qué? 
+\end_layout
+
+\begin_layout Standard
+Este breve ensayo ha sido elaborado usando los siguientes programas informáticos
+ de software libre para el tratamiento de datos y edición del documento:
+ R, R STUDIO y LYX (paquete knitr).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+notesname}{Enlaces citados en el artículo}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+theendnotes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
