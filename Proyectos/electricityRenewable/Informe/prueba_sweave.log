@@ -1,11 +1,11 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2016.11.5)  1 DEC 2016 00:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2019.7.23)  4 JAN 2020 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **prueba_sweave.tex
 (./prueba_sweave.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 6 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -23,6 +23,12 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
+(/opt/R/3.6.0/lib/R/share/texmf/tex/latex/Sweave.sty
+Package: Sweave 
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -39,63 +45,224 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: xetex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 
-(/usr/share/texlive/texmf-dist/tex/xelatex/xetex-def/xetex.def
-File: xetex.def 2015/09/11 v4.06 LaTeX color/graphics driver for XeTeX (TeX Liv
-e/RRM/JK)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)))
+)
+\Gread@gobject=\count87
+))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2016/01/03 v1.1b Standard LaTeX Color (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count88
+\FV@InFile=\read1
+\FV@TabBox=\box26
+\c@FancyVerbLine=\count89
+\FV@StepNumber=\count90
+\FV@OutFile=\write3
+) (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 )
-Package color Info: Driver file: xetex.def on input line 143.
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip43
-\fb@frw=\dimen105
-\fb@frh=\dimen106
-\FrameRule=\dimen107
-\FrameSep=\dimen108
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/ae/ae.sty
+Package: ae 2001/02/12 1.3 Almost European Computer Modern
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
-Package: alltt 1997/06/16 v2.0g defines alltt environment
-)
-(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-)
-(./prueba_sweave.aux)
+LaTeX Font Info:    Try loading font information for T1+aer on input line 105.
+
+(/usr/share/texlive/texmf-dist/tex/latex/ae/t1aer.fd
+File: t1aer.fd 1997/11/16 Font definitions for T1/aer.
+)))) (./prueba_sweave.aux)
 \openout1 = `prueba_sweave.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 4.
 
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count91
+\scratchdimen=\dimen105
+\scratchbox=\box27
+\nofMPsegments=\count92
+\nofMParguments=\count93
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen106
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
+\everyMPtoPDFconversion=\toks16
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+(./prueba_sweave-concordance.tex)
 ! Undefined control sequence.
-l.56 \textclass
-                article
+l.8 \textclass
+               article
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -109,7 +276,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58 \usepackage
+l.10 \usepackage
                 [font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
 
 Your command was ignored.
@@ -123,7 +290,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 \usepackage
+l.11 \usepackage
                 {wrapfig}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -136,7 +303,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.60 \usepackage
+l.12 \usepackage
                 {amsmath}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -149,7 +316,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.61 \usepackage
+l.13 \usepackage
                 {multicol}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -162,7 +329,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.62 \usepackage
+l.14 \usepackage
                 {xcolor}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -175,20 +342,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.63 \usepackage
+l.15 \usepackage
                 {endnotes}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (25.0063pt too wide) in paragraph at lines 55--64
-[][]\OT1/cmr/m/n/10 header ar-ti-cle []preamble [font=footnotesize,sc,textfont=
-footnotesize,sc,bf]caption
+Overfull \hbox (25.39442pt too wide) in paragraph at lines 7--16
+[]\T1/aer/m/n/10 _header ar-ti-cle _pream-ble [font=footnotesize,sc,textfont=fo
+otnotesize,sc,bf]caption
  []
 
 ! Undefined control sequence.
-l.67 \options
+l.19 \options
               hidelinks,spanish
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -197,7 +364,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.68 \use
+l.20 \use
          _default_options true
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -208,17 +375,17 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.68 \use_
+l.20 \use_
           default_options true
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 68.
+(Font)              <7> on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 68.
+(Font)              <5> on input line 20.
 ! Undefined control sequence.
-l.73 \maintain
+l.25 \maintain
               _unincluded_children false
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -229,7 +396,7 @@ and I'll forget about whatever was undefined.
 ! Missing number, treated as zero.
 <to be read again> 
                    s
-l.74 \language s
+l.26 \language s
                 panish
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
@@ -238,14 +405,14 @@ look up `weird error' in the index to The TeXbook.)
 ! Missing number, treated as zero.
 <to be read again> 
                    _
-l.75 \language_
+l.27 \language_
                package default
 A number should have been here; I inserted `0'.
 (If you can't figure out why I needed to see a number,
 look up `weird error' in the index to The TeXbook.)
 
 ! Undefined control sequence.
-l.76 \inputencoding
+l.28 \inputencoding
                     auto
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -256,7 +423,7 @@ and I'll forget about whatever was undefined.
 ! Missing \endcsname inserted.
 <to be read again> 
                    \font 
-l.78 \font
+l.30 \font
           _roman bookman
 The control sequence marked <to be read again> should
 not appear between \csname and \endcsname.
@@ -264,7 +431,7 @@ not appear between \csname and \endcsname.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.79 \font_
+l.31 \font_
            sans helvet
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -272,11 +439,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_sans not loadable: Metric (TFM) file or installed font no
-t found.
+! Font \inaccessible=_sans not loadable: Metric (TFM) file not found.
 <to be read again> 
                    h
-l.79 \font_sans h
+l.31 \font_sans h
                  elvet
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -287,7 +453,7 @@ e.g., type `I\font<same font id>=<substitute font name>'.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.80 \font_
+l.32 \font_
            typewriter courier
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -295,11 +461,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_typewriter not loadable: Metric (TFM) file or installed f
-ont not found.
+! Font \inaccessible=_typewriter not loadable: Metric (TFM) file not found.
 <to be read again> 
                    c
-l.80 \font_typewriter c
+l.32 \font_typewriter c
                        ourier
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -310,7 +475,7 @@ e.g., type `I\font<same font id>=<substitute font name>'.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.81 \font_
+l.33 \font_
            math auto
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -318,11 +483,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_math not loadable: Metric (TFM) file or installed font no
-t found.
+! Font \inaccessible=_math not loadable: Metric (TFM) file not found.
 <to be read again> 
                    a
-l.81 \font_math au
+l.33 \font_math au
                   to
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -333,7 +497,7 @@ e.g., type `I\font<same font id>=<substitute font name>'.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.82 \font_
+l.34 \font_
            default_family rmdefault
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -341,11 +505,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_default_family not loadable: Metric (TFM) file or install
-ed font not found.
+! Font \inaccessible=_default_family not loadable: Metric (TFM) file not found.
 <to be read again> 
                    r
-l.82 \font_default_family r
+l.34 \font_default_family r
                            mdefault
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -354,7 +517,7 @@ You might try inserting a different font spec;
 e.g., type `I\font<same font id>=<substitute font name>'.
 
 ! Undefined control sequence.
-l.83 \use
+l.35 \use
          _non_tex_fonts false
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -365,7 +528,7 @@ and I'll forget about whatever was undefined.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.84 \font_
+l.36 \font_
            sc false
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -373,11 +536,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_sc not loadable: Metric (TFM) file or installed font not 
-found.
+! Font \inaccessible=_sc not loadable: Metric (TFM) file not found.
 <to be read again> 
                    f
-l.84 \font_sc f
+l.36 \font_sc f
                alse
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -388,7 +550,7 @@ e.g., type `I\font<same font id>=<substitute font name>'.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.85 \font_
+l.37 \font_
            osf false
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -396,11 +558,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_osf not loadable: Metric (TFM) file or installed font not
- found.
+! Font \inaccessible=_osf not loadable: Metric (TFM) file not found.
 <to be read again> 
                    f
-l.85 \font_osf f
+l.37 \font_osf f
                 alse
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -411,7 +572,7 @@ e.g., type `I\font<same font id>=<substitute font name>'.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.86 \font_
+l.38 \font_
            sf_scale 100
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -419,11 +580,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_sf_scale not loadable: Metric (TFM) file or installed fon
-t not found.
+! Font \inaccessible=_sf_scale not loadable: Metric (TFM) file not found.
 <to be read again> 
                    1
-l.86 \font_sf_scale 1
+l.38 \font_sf_scale 1
                      00
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -434,7 +594,7 @@ e.g., type `I\font<same font id>=<substitute font name>'.
 ! Missing control sequence inserted.
 <inserted text> 
                 \inaccessible 
-l.87 \font_
+l.39 \font_
            tt_scale 100
 Please don't say `\def cs{...}', say `\def\cs{...}'.
 I've inserted an inaccessible control sequence so that your
@@ -442,11 +602,10 @@ definition will be completed without mixing me up too badly.
 You can recover graciously from this error, if you're
 careful; see exercise 27.2 in The TeXbook.
 
-! Font \inaccessible=_tt_scale not loadable: Metric (TFM) file or installed fon
-t not found.
+! Font \inaccessible=_tt_scale not loadable: Metric (TFM) file not found.
 <to be read again> 
                    1
-l.87 \font_tt_scale 1
+l.39 \font_tt_scale 1
                      00
 I wasn't able to read the size data for this font,
 so I will ignore the font specification.
@@ -455,7 +614,7 @@ You might try inserting a different font spec;
 e.g., type `I\font<same font id>=<substitute font name>'.
 
 ! Undefined control sequence.
-l.88 \graphics
+l.40 \graphics
                default
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -464,7 +623,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.89 \default
+l.41 \default
              _output_format default
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -475,7 +634,7 @@ and I'll forget about whatever was undefined.
 ! Missing { inserted.
 <to be read again> 
                    _
-l.90 \output_
+l.42 \output_
              sync 0
 A left brace was mandatory here, so I've put one in.
 You might want to delete and/or insert some corrections
@@ -502,11 +661,11 @@ you'd better type `E' or `X' now and fix your file.
 
  
 Here is how much of TeX's memory you used:
- 926 strings out of 495525
- 11964 string characters out of 6185940
- 76128 words of memory out of 5000000
- 4243 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
- 40 hyphenation exceptions out of 8191
- 27i,4n,19p,291b,63s stack positions out of 5000i,500n,10000p,200000b,80000s
-No pages of output.
+ 2662 strings out of 494944
+ 37829 string characters out of 6180677
+ 100694 words of memory out of 5000000
+ 5928 multiletter control sequences out of 15000+600000
+ 5898 words of font info for 16 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 37i,3n,23p,253b,80s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
