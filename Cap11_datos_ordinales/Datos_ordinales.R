@@ -76,5 +76,6 @@ t(apply(t1,MARGIN=1,FUN=cumsum))
 
 # O bien, su tabla de frecuencias relativas. Guardo en la variable t2 para poder dibujar la gráfica después
 t2=t(apply(prop.table(t1),MARGIN=1,FUN=cumsum))
+t2
 barplot(t2,beside=TRUE,legend.text = levels(notasMat)
         ,args.legend=list(x="topleft",cex=0.55))
