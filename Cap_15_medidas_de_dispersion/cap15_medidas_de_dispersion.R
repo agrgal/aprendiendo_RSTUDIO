@@ -142,7 +142,7 @@ abline(h=mean(polloA),col=c("red"))
 # ========
 # Recupero el dataframe del capítulo 10, pediatría, para ilustrar otro ejemplo de boxplot
 cat("\014")
-pediatria=read.csv("Cap10_datos_cualitativos_multidimensionales/pediatria.csv"
+pediatria=read.csv("Cap_10_datos_cualitativos_multidimensionales/pediatria.csv"
                    ,header=TRUE,dec=",")
 
 # Podemos obtener las gráficas boxplot de Edad y Peso del dataframe
@@ -154,7 +154,8 @@ abline(h=mean(pediatria$Peso),col=c("darkgreen"))
 # Y volvemos a dibujar. Cuando existen valores muy por encima de los "whiskers"
 # se dibujan con circulitos. Son valores atípicos. 
 pediatria$Peso[1000]=72
-b2 = boxplot(pediatria$Peso~pediatria$Sexo,data=pediatria,xlab="Sexo",ylab="Peso")
+b2 = boxplot(pediatria$Peso~pediatria$Sexo,data=pediatria
+             ,xlab="Sexo",ylab="Peso",notch=TRUE,col=c("lightblue","lightgreen"))
 abline(h=mean(pediatria$Peso),col=c("darkgreen"))
 
 cat("\014")
