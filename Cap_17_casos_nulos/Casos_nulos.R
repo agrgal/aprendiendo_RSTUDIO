@@ -26,6 +26,7 @@ mean(datos[-6]) # Todos quitando el 6
 # Con otras funciones
 cat("\014")
 sum(datos,na.rm=TRUE)
+na.omit(datos)
 cumsum(na.omit(datos))
 
 # ¿En qué posiciones existe NA?
@@ -41,10 +42,12 @@ ruleta=read.csv("Cap_16_valores_cuantitativos_multidimensionales/ruleta.csv",hea
 # Y fuerzo a que haya algunos valores nulos
 ruleta[30,c(3,6)]=NA
 ruleta[50,c(1,4)]=NA
-# En las columnas 1 (lunes) y 4 (jueves) fila 50 habrá NULL, y en la del Miércoles y Sábadao en la 30.
+# En las columnas 1 (lunes) y 4 (jueves) fila 50 habrá NULL, y en la del Miércoles y Sábado en la 30.
 # calculando ahora sus medias
 sapply(ruleta,FUN=mean) # ¡No sabe calcularla en lunes, miércoles, jueves o sábado!
 sapply(ruleta,FUN=mean,na.rm=TRUE) # A menos que retire los NA.
+sapply(ruleta,FUN=var) # ¡No sabe calcularla en lunes, miércoles, jueves o sábado!
+sapply(ruleta,FUN=var,na.rm=TRUE) # A menos que retire los NA.
 
 cat("\014")
 # Y calculo una tabla del primer vector de la ruleta el del lunes
@@ -57,6 +60,20 @@ ftable(t1)
 sum(t1) # con tablas simplemente descarta los casos NA.
 ftable(round(prop.table(t1,margin=1),2)) # E igual con tablas de frecuencias relativas
 
-# Gráfica
-plot(ruleta$Lunes)
+# En caso de estudiar covarianzas y correlaciones se utiliza use="complete.obs"...
+cat("\014")
+cov(ruleta$Lunes,ruleta$miércoles)
+cov(ruleta$Lunes,ruleta$miércoles,use="complete.obs")
+cor(ruleta$Lunes,ruleta$miércoles,use="complete.obs")
 
+cat("\014")
+# En un caso multidimensional (con cov es lo mismo)
+cor(ruleta)
+# A) se eliminan directamente las filas que tengan NA (la 30 y la 50) y se realiza
+# el cálculo, con 
+cor(ruleta,use="complete.obs")
+# B) En cada cálculo se eliminan los NA implicados (recordemos que se calcula cada dos 
+# columnas) con use="pairwise.complete.obs"
+cor(ruleta,use="pairwise.complete.obs")
+# comparar con ambos métodos como no es lo mismo (domingo con lunes, por ejemplo o martes 
+# con lunes)
