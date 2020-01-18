@@ -56,3 +56,13 @@ curve(h(x),
       col="purple", lty="solid",lwd="2",type="l",   
       add=TRUE)
 
+# Integrales: expresión
+library(Ryacas0)
+F = function(x) 0
+x = Sym('x')
+body(F) = as.expression(yacas(Integrate(as.expression(body(g)), x)))
+F
+
+curve(F(x),
+      col="pink", lty="solid",lwd="2",type="l",   
+      add=TRUE)
