@@ -4,16 +4,55 @@
 # Usaremos RSTUDIO para estudiar funciones. Las funciones (de dos variables), definen 
 # la relación entre unos valores en el eje X y otros en el eje Y.
 # Por ejemplo, la función f(x)=x^3-2x^2-2x-7 (polinómica)
-f = function(x) {x^3-2*x^2-2*x-7}
+f = function(x) x^3-2*x^2-2*x-7
 
 # Para representarla uso PLOT
 old.par=par()
 par(mar=c(5,5,5,5))
-  mi = expression(x^3-2*x^2-2*x-7)
-  x = -10:10 #Valores en el eje x
+  mi = body(f)                                              # expresión algebraica
+  x = seq(-4,4,0.1) #Valores en el eje x
   plot(x,f(x),                                              # valores x e y 
        xlab="X",ylab=mi, main="Gráfica función polinómica", # títulos
-       xlim=c(-10,10), ylim=c(-20,20),                      # límites que se dibujan
+       xlim=c(-4,4), ylim=c(-50,50),                  # límites que se dibujan
        col="red", lty="solid",lwd="2",type="l",             # color, línea sólida, ancho de línea y tipo
-       xaxp=c(-10,10,20))                                   # 
+       xaxp=c(-4,4,20))                                   # Número de marcas en el eje X
+  abline(h=0,col="blue",lwd=2,lty="dashed")                 # eje X 
+  abline(v=0,col="blue",lwd=2,lty="dashed")                 # eje y
+  points(3.8,f(3.8),pch=5,col="darkgreen")                      # poner un punto en pantalla
+  text(3.8,f(3.8),cex=0.8,labels=c("punto representativo"),pos=2)# poner un texto en pantalla
 par=old.par
+
+# Derivada
+# paquete DERIV (explicar cómo se instala un paquete)
+# library(Deriv)
+# g = Deriv(f) #Primera derivada de f
+# g = Simplify(g) #Función der
+
+library(mosaic)
+library(mosaicCalc)
+
+g = D(f(x)~x)
+
+
+
+cerosf=findZeros(f(x)~x,xlim=c(-10,10)) # encuentra los ceros de la función
+cerosg=findZeros(g(x)~x,xlim=c(-10,10)) # encuentra los mínimos y los máximos
+cerosf
+cerosg
+points(cerosf$x,f(cerosf$x),pch=7,col="black") 
+points(cerosg$x,f(cerosg$x),pch=2,col="violet") 
+
+curve(g(x),
+      col="green", lty="solid",lwd="2",type="l",   
+      add=TRUE)
+
+legend("top"
+       ,legend=c("rojo f","verde derivada"),col=c("red","green")
+       ,lwd=2, cex=0.7)
+
+# Integrales
+h = antiD(g(x)~x)
+curve(h(x),
+      col="purple", lty="solid",lwd="2",type="l",   
+      add=TRUE)
+
