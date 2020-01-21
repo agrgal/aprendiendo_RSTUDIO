@@ -1,5 +1,5 @@
 # 1) Obtengo el dataframe pacientes
-pacientes=read.csv("Cap9_Problemas_cualitativos_bidimensionales/pacientes.csv",header=TRUE,dec=",")
+pacientes=read.csv("Cap_09_Problemas_cualitativos_bidimensionales/pacientes.csv",header=TRUE,dec=",")
 
 # 2) Añado una fila más al dataframe para obtener 1000, con la orden rbind
 nuevaFila = data.frame(Peso=c(80),Edad=c(45))

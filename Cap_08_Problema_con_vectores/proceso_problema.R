@@ -1,5 +1,5 @@
 # lectura del fichero resultado.csv
-calificaciones = read.csv("Cap8_Problema_con_vectores/resultado.csv",header=FALSE,dec=",")
+calificaciones = read.csv("Cap_08_Problema_con_vectores/resultado.csv",header=FALSE,dec=",")
 # cambio de nombre de los campos
 names(calificaciones)=c("notas","sexo")
 # nº 1: ¿cuántos opositores se han presentado a la prueba?
